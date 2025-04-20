@@ -13,22 +13,22 @@ export function Sidebar() {
             <div className={styles.navIcons}>
                 {/* Home Icon */}
                 <Link href="/home" className={styles.iconLink}>
-                    <img src="assets/icon-nav-home.svg" alt="Home" />
+                    <img src="assets/icon-nav-home.svg" alt="Home" className={styles.icon}/>
                 </Link>
                 
                 {/* Movies Icon */}
                 <Link href="/movies" className={styles.iconLink}>
-                    <img src="assets/icon-nav-movies.svg" alt="Home" />
+                    <img src="assets/icon-nav-movies.svg" alt="Movies" className={styles.icon}/>
                 </Link>
                 
                 {/* TV Series Icon */}
                 <Link href="/tv-series" className={styles.iconLink}>
-                    <img src="assets/icon-nav-tv-series.svg" alt="Home" />
+                    <img src="assets/icon-nav-tv-series.svg" alt="TV Series" className={styles.icon}/>
                 </Link>
                 
                 {/* Bookmark Icon */}
                 <Link href="/bookmarks" className={styles.iconLink}>
-                    <img src="assets/icon-nav-bookmark.svg" alt="Home" />
+                    <img src="assets/icon-nav-bookmark.svg" alt="Bookmarks" className={styles.icon}/>
                 </Link>
                 
                 {/* Profile Icon */}

@@ -28,9 +28,23 @@
 
 .iconLink {
   color: #5A698F;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-.iconLink.active {
-  color: white;
+/* Only apply the red filter on hover */
+.iconLink:hover img:not([src*="image-avatar"]) {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(325deg) brightness(101%) contrast(96%);
+}
+
+/* Special handling for avatar */
+.iconLink img[src*="image-avatar"] {
+  width: 30px;
+  height: 30px;
+  margin-top: 100px;
+  transition: transform 0.2s ease;
+}
+
+.iconLink:hover img[src*="image-avatar"] {
+  transform: scale(1.1);
 }
