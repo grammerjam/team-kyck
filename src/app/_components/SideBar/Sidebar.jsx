@@ -12,7 +12,7 @@ export function Sidebar() {
             
             <div className={styles.navIcons}>
                 {/* Home Icon */}
-                <Link href="/home" className={styles.iconLink}>
+                <Link href="/" className={styles.iconLink}>
                     <img src="assets/icon-nav-home.svg" alt="Home" className={styles.icon}/>
                 </Link>
                 
