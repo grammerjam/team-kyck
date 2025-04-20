@@ -32,7 +32,7 @@ export function Trending() {
 
     if (loading) return <div className={styles.loading}>Loading trending content...</div>;
     if (error) return <div className={styles.error}>Error: {error}</div>;;
-    const categoryColors = {
+    const categoryName = {
         Movie: 'assets/icon-category-movie.svg',
         'TV Series' : 'assets/icon-category-tv.svg',
     };
@@ -72,7 +72,7 @@ export function Trending() {
                                         <span>•</span>
                                         <span style={{height: '12px', width: '12px', display: 'inline-block', marginTop: '4px'}}>
                                             <Image
-                                            src={categoryColors[item.category]}
+                                            src={categoryName[item.category]}
                                             alt={item.category}
                                             width={12}
                                             height={12}

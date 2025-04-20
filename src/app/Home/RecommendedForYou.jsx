@@ -33,7 +33,7 @@ export function RecommendedForYou() {
 
     // Filter out trending items for the grid display
     const regularShows = allShows.filter(item => !item.isTrending);
-    const categoryColors = {
+    const categoryName = {
         Movie: 'assets/icon-category-movie.svg',
         'TV Series' : 'assets/icon-category-tv.svg',
     };
@@ -71,7 +71,7 @@ export function RecommendedForYou() {
                                 <span>•</span>
                                 <span style={{height: '12px', width: '12px', display: 'inline-block'}}>
                                     <Image
-                                        src={categoryColors[show.category]}
+                                        src={categoryName[show.category]}
                                         alt={show.category}
                                         width={12}
                                         height={12}
