@@ -37,7 +37,7 @@
   filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(325deg) brightness(101%) contrast(96%);
 }
 
-/* Special handling for avatar */
+/* Special handling for the profile */
 .iconLink img[src*="image-avatar"] {
   width: 30px;
   height: 30px;
