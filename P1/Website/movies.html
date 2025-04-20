@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/grammerhub_favicon-32x32.png">
+  
+  <title>team-kyck | Entertainment web app</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background-color: #10141E;
+      color: white;
+      padding-left: 70px; /* Add padding to body to move content right */
+    }
+    
+    .sidebar {
+      width: auto;
+      background-color: #5A698F;
+      border-radius: 0 16px 16px 0;
+      padding: 24px;
+      padding-left: 20px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+      height: 50vh; /* Set height to 50% of the viewport height */
+      align-self: top; 
+      display: flex;
+      flex-direction: column;
+      position: fixed; /* Position sidebar fixed */
+      left: 0px; /* Position sidebar at left edge */
+      margin-left: 20px; /* Move sidebar 70px to the right */
+      top: 0px; /* Align sidebar to the top */
+      margin-top: 20px;
+    }
+    
+    .content {
+      flex: 1;
+      padding: 24px;
+      margin-left: 140px; /* Add margin to prevent content from being hidden behind sidebar */
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <nav>
+      <ul style="list-style: none; margin-top: 24px;">
+        <li style="margin-bottom: 12px;"><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: white; text-decoration: none;">Movies</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: white; text-decoration: none;">TV Series</a></li>
+        <li style="margin-bottom: 12px;"><a href="#" style="color: white; text-decoration: none;">Bookmarked</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <h1>Search for movies</h1>
+    
+    <h2>Movies</h2>
+
+    <!-- Display all movies -->
+  </div>
+  
+</body>
+</html>
