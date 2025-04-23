@@ -47,7 +47,7 @@
 }
 
 /* Show overlay when hovering over the thumbnail container */
-.thumbnailContainer:hover .hoverOverlay {
+.thumbnailContainer:hover:not(:has(.bookmarkIcon:hover)) .hoverOverlay {
     opacity: 1;
 }
 
@@ -126,6 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .bookmarkIcon:hover {

@@ -52,7 +52,7 @@
 }
 
 /* Show overlay when hovering over the thumbnail container */
-.thumbnailWrapper:hover .hoverOverlay {
+.thumbnailWrapper:hover:not(:has(.bookmarkIcon:hover)) .hoverOverlay {
     opacity: 1;
 }
 
