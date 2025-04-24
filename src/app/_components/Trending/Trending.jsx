@@ -10,24 +10,27 @@ export function Trending() {
 
     useEffect(() => {
         // Fetch data from the JSON file
-        fetch('/assets/data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Filter only trending items
-                const trending = data.filter(item => item.isTrending);
-                setTrendingData(trending);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error('Error fetching trending data:', err);
-                setError(err.message);
-                setLoading(false);
-            });
+        fetch('http://localhost:3000/api/trending', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch data from our API');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setTrendingData(data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error('Error fetching trending data:', err);
+            setError(err.message);
+            setLoading(false);
+        });
     }, []); 
 
     if (loading) return <div className={styles.loading}>Loading trending content...</div>;
