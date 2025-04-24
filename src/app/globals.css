@@ -78,7 +78,7 @@ color: #FC4747; font-weight: lighter; text-decoration: none;
       
 
 #backgroundImage{
-  background: url(./LandingPageBackground.png) no-repeat center center; height: 100vh; 
+  background: url(/LandingPageBackground.png) no-repeat center center; height: 100vh; 
   background-size:cover; margin-left:0; 
   margin-right:0;
 }
