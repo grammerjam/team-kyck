@@ -9,7 +9,7 @@ export function RecommendedForYou() {
 
     React.useEffect(() => {
         // Fetch data from the JSON file
-        fetch('http://localhost:3000/api/recommendedForYou', {
+        fetch('/api/recommendedForYou', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

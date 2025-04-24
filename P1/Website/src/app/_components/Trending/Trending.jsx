@@ -10,7 +10,7 @@ export function Trending() {
 
     useEffect(() => {
         // Fetch data from the JSON file
-        fetch('http://localhost:3000/api/trending', {
+        fetch('/api/trending', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
