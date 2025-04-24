@@ -9,23 +9,28 @@ export function RecommendedForYou() {
 
     React.useEffect(() => {
         // Fetch data from the JSON file
-        fetch('/assets/data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Use all shows from data.json
-                setAllShows(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error('Error fetching shows:', err);
-                setError(err.message);
-                setLoading(false);
-            });
+        fetch('http://localhost:3000/api/recommendedForYou', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Use all shows from data.json
+            setAllShows(data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error('Error fetching shows:', err);
+            setError(err.message);
+            setLoading(false);
+        });
     }, []);
 
     if (loading) return <div className={styles.loading}>Loading content...</div>;
