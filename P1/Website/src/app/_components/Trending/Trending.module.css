@@ -133,3 +133,13 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media (max-width: 1024px) {
+    .trending {
+        margin-left: 5vh;
+    }
+
+    .trendingContainer {
+        margin-left: 5vh;
+    }
+    
+}
