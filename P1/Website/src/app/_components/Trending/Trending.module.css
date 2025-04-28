@@ -10,8 +10,9 @@
     display: flex;
     overflow-x: auto;
     gap: 16px;
-    padding: 20px;
     margin-left: 24vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .trendingItem {
@@ -141,5 +142,12 @@
     .trendingContainer {
         margin-left: 5vh;
     }
-    
+
+}
+
+@media (max-width: 768px) {
+    .trendingItem {
+        min-width: 90%;
+        margin-bottom: 20px; /* Space between items */
+    }
 }
