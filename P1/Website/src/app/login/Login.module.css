@@ -1,0 +1,86 @@
+.loginImgCon {
+    margin-left: auto; 
+    margin-right: auto; 
+    width:fit-content; 
+    margin-top: 87px;
+    margin-bottom: 83px;
+}
+
+.loginInfoCon {
+    background-color: #161D2F; 
+    border-radius:6%; 
+    width:400px; 
+    height:373px; 
+    margin: auto; 
+    font-family: sans-serif; 
+    color:white; 
+    padding: auto; 
+    text-align: center;
+}
+    
+.loginTitle {
+    font-weight: lighter; 
+    margin-top: 25px;
+    margin-bottom: 40px; 
+    float: left;
+    margin-left: 24px;
+    font-size: 32;
+}
+      
+.loginInput {
+    border: none; 
+    border-bottom: 1px solid #5A698F ; 
+    background-color: transparent; 
+    color:white; 
+    margin-bottom:40px; 
+    width: 336px; 
+    height: 37px;        
+    outline: none;
+    transition: border-bottom 0.3s ease-in-out;
+    padding-left: 12px;
+}
+
+.loginInput:focus {
+    outline: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.loginInput::placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.loginInput:focus::placeholder {
+    opacity: 0;
+}
+
+.loginInput:invalid {
+    border: none;
+    outline: 2px solid red;
+    border-radius: 5px;
+}
+
+.loginButtonSubmit {
+    background-color: #FC4747; color:white; border:0px none transparent; border-radius: 6px; width: 336px; height: 48px; margin-bottom:12px;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.loginButtonSubmit:hover{
+    background-color: white;
+    color: black;
+}
+
+.loginButtonSubmit:active{
+    background-color: black;
+    color: white;
+}
+
+.loginSignUpCon {
+    text-align: center;
+}
+  
+.loginSignUpLink {
+  color: #FC4747; font-weight: lighter; text-decoration: none;
+}
+        

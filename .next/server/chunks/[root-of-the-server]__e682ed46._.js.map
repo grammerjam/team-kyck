@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 76, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/CASPI/repos/team-kyck/src/app/api/trending/route.js"],"sourcesContent":["import { NextResponse } from 'next/server';\r\nimport fs from 'fs';\r\nimport path from 'path';\r\n\r\nexport async function GET() {\r\n    try {\r\n        const filePath = path.join(process.cwd(), 'public', 'assets', 'data.json');\r\n        const contents = fs.readFileSync(filePath, 'utf-8')\r\n        const data = JSON.parse(contents);\r\n\r\n        const trending = data.filter(item => item.isTrending);\r\n\r\n        return NextResponse.json(trending);\r\n    }\r\n    catch (error) {\r\n        console.error('Error reading data.json file: ', error);\r\n        return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });\r\n    }\r\n}"],"names":[],"mappings":";;;AAAA;AACA;AACA;;;;AAEO,eAAe;IAClB,IAAI;QACA,MAAM,WAAW,iGAAA,CAAA,UAAI,CAAC,IAAI,CAAC,QAAQ,GAAG,IAAI,UAAU,UAAU;QAC9D,MAAM,WAAW,6FAAA,CAAA,UAAE,CAAC,YAAY,CAAC,UAAU;QAC3C,MAAM,OAAO,KAAK,KAAK,CAAC;QAExB,MAAM,WAAW,KAAK,MAAM,CAAC,CAAA,OAAQ,KAAK,UAAU;QAEpD,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;IAC7B,EACA,OAAO,OAAO;QACV,QAAQ,KAAK,CAAC,kCAAkC;QAChD,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;YAAE,OAAO;QAAuB,GAAG;YAAE,QAAQ;QAAI;IAC9E;AACJ","debugId":null}}]
+}

@@ -1,24 +1,26 @@
 import Image from "next/image";
+import styles from "./Login.module.css"
+
 
 export default function Home() {
   return (
     <div>
-        <div id="loginImgCon">
+        <div className={styles.loginImgCon}>
             <img src="/assets/logo.svg" alt="KyckFlix logo." />
         </div>
         
-          <div id="loginInfoCon">
-            <h1 id="loginTitle">
+          <div className={styles.loginInfoCon}>
+            <h1 className={styles.loginTitle}>
                 Login<br/>
             </h1>
-            <input id="loginInputEmail" type="email" placeholder="   Email address" />
+            <input className={styles.loginInput} type="email" placeholder="Email address" aria-required="true" required/>
             <br/>
-            <input id="loginInputPassword" type="password" placeholder="   Password"/>
+            <input className={styles.loginInput} type="password" placeholder="Password" aria-required="true" required/>
             <br/>
-            <button id="loginButtonSubmit">Login to your account</button>
+            <button className={styles.loginButtonSubmit}>Login to your account</button>
             <br/>
-            <p id="loginSighUpCon">
-                Don't have an account? <a id="loginSignUpLink" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Sign Up</a>
+            <p className={styles.loginSighUpCon}>
+                Don't have an account? <a className={styles.loginSignUpLink} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Sign Up</a>
             </p>
         </div>
     </div>
