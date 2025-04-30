@@ -4,7 +4,9 @@ import styles from "./Login.module.css"
 
 export default function Home() {
   return (
+    <div className={styles.background}>
     <div>
+
         <div className={styles.loginImgCon}>
             <img src="/assets/logo.svg" alt="KyckFlix logo." />
         </div>
@@ -23,6 +25,7 @@ export default function Home() {
                 Don't have an account? <a className={styles.loginSignUpLink} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Sign Up</a>
             </p>
         </div>
+    </div>
     </div>
   );
 }
