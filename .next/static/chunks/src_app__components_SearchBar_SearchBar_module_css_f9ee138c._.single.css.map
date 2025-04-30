@@ -2,5 +2,22 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/_components/SearchBar/SearchBar.module.css"],"sourcesContent":[".searchContainer {\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n    width: 85%;\r\n    margin-bottom: 20px;\r\n    margin-left: 25vh;\r\n    margin-top: 6vh;\r\n}\r\n\r\n.iconWrapper {\r\n    position: absolute;\r\n    left: 10px;\r\n    z-index: 10;\r\n    pointer-events: none; /* Makes the icon wrapper not interfere with clicks */\r\n}\r\n\r\n.searchIcon {\r\n    width: 24px;\r\n    height: 24px; /* Keeps the aspect ratio */\r\n}\r\n\r\n.searchbar {\r\n    color: #ffffff;\r\n    width: 100%;\r\n    padding: 10px;\r\n    margin-left: 10px;\r\n    border-radius: 0px;\r\n    border: none;\r\n    transition: border-bottom 0.3s ease-in-out;\r\n    background-color: transparent;\r\n}\r\n\r\n.searchbar:focus {\r\n    outline: none;\r\n    border-bottom: 2px solid rgba(255, 255, 255, 0.5);\r\n}\r\n\r\n.searchbar::placeholder {\r\n    color: #ffffff;\r\n    opacity: 0.5;\r\n}\r\n\r\n.searchbar:focus::placeholder {\r\n    opacity: 0;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AAUA;;;;;;;AAOA;;;;;AAKA;;;;;;;;;;;AAWA;;;;;AAKA;;;;;AAKA"}}]
+    {
+      "offset": {
+        "line": 1,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "turbopack:///[project]/src/app/_components/SearchBar/SearchBar.module.css"
+        ],
+        "sourcesContent": [
+          ".searchContainer {\n    position: relative;\n    display: flex;\n    align-items: center;\n    width: 85%;\n    margin-bottom: 20px;\n    margin-left: 25vh;\n    margin-top: 6vh;\n}\n\n.iconWrapper {\n    position: absolute;\n    left: 10px;\n    z-index: 10;\n    pointer-events: none; /* Makes the icon wrapper not interfere with clicks */\n}\n\n.searchIcon {\n    width: 24px;\n    height: 24px; /* Keeps the aspect ratio */\n}\n\n.searchbar {\n    color: #ffffff;\n    width: 100%;\n    padding: 10px;\n    margin-left: 10px;\n    border-radius: 0px;\n    border: none;\n    transition: border-bottom 0.3s ease-in-out;\n    background-color: transparent;\n}\n\n.searchbar:focus {\n    outline: none;\n    border-bottom: 2px solid rgba(255, 255, 255, 0.5);\n}\n\n.searchbar::placeholder {\n    color: #ffffff;\n    opacity: 0.5;\n}\n\n.searchbar:focus::placeholder {\n    opacity: 0;\n}\n"
+        ],
+        "names": [],
+        "mappings": "AAAA;;;;;;;;;;AAUA;;;;;;;AAOA;;;;;AAKA;;;;;;;;;;;AAWA;;;;;AAKA;;;;;AAKA"
+      }
+    }
+  ]
 }
