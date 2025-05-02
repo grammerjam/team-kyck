@@ -89,8 +89,15 @@
     transition: background-color 0.2s ease;
 }
 
+/* Apply background change to the icon container */
 .bookmarkIcon:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255);
+}
+
+/* Apply filter only to the SVG/image inside the icon */
+.bookmarkIcon:hover svg path,
+.bookmarkIcon:hover img {
+    filter: brightness(0);
 }
 
 .showInfo {

@@ -129,9 +129,15 @@
     justify-content: center;
 }
 
+/* Apply background change to the icon container */
 .bookmarkIcon:hover {
-    transform: scale(1.1);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255);
+}
+
+/* Apply filter only to the SVG/image inside the icon */
+.bookmarkIcon:hover svg path,
+.bookmarkIcon:hover img {
+    filter: brightness(0);
 }
 
 @media (max-width: 1024px) {
