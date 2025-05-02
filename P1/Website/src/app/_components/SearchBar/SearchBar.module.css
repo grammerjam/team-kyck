@@ -44,3 +44,13 @@
 .searchbar:focus::placeholder {
     opacity: 0;
 }
+
+/* designing for tablet and mobile */
+@media (max-width: 1024px) {
+    .searchContainer {
+        width: 90%;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 5vh;
+    }
+}

@@ -122,31 +122,19 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
+
+    .recommended {
+        margin-left: 5vh;
+    }
     .grid {
+        margin-left: 5vh;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 15vh;
-    }
-    
-    .recommended {
-        margin-left: 15vh;
-    }
-}
-
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr;
-        margin-left: 10vh;
-    }
-    
-    .recommended {
-        margin-left: 10vh;
-        font-size: 24px;
     }
 }

@@ -30,14 +30,12 @@ export function Sidebar() {
                 <Link href="/bookmarks" className={styles.iconLink}>
                     <img src="assets/icon-nav-bookmark.svg" alt="Bookmarks" className={styles.icon}/>
                 </Link>
-                
-                {/* Profile Icon */}
-                <Link href="/profile" className={styles.iconLink}>
-                    <img src="assets/image-avatar.png" 
-                    alt="Home" 
-                    style={{width: '30px', height: '30px', marginTop: '100px'}}/>
-                </Link>
             </div>
+            {/* Profile Icon */}
+            <Link href="/profile" className={styles.profileLink}>
+                <img src="assets/image-avatar.png" 
+                alt="Home" />
+            </Link>
         </div>
     );
 }

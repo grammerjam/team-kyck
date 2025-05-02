@@ -1,5 +1,6 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
+<<<<<<< HEAD
     "/_app": [
       "static/chunks/[root-of-the-server]__ec07ee34._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
@@ -16,6 +17,9 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages__error_5771e187._.js",
       "static/chunks/pages__error_c5ed9705._.js"
     ]
+=======
+    "/_app": []
+>>>>>>> dev
   },
   "devFiles": [],
   "ampDevFiles": [],
