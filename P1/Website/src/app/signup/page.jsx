@@ -8,14 +8,20 @@ import { relative } from 'path';
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
+
   const [eMessage, setEMessage] = useState("");
   const [pMessage, setPMessage] = useState("");
+  const [pcMessage, setPCMessage] = useState("");
+  
   const [isEmailError, setIsEmailError] = useState(false)
   const [isPasswordError, setIsPasswordError] = useState(false)
+  const [isPasswordCheckError, setIsPasswordCheckError] = useState(false)
 
   const validate=()=>{
     emailValidation()
     passwordValidation()
+    passwordCheckValidation()
   }
 
   const emailValidation=()=>{
@@ -44,6 +50,17 @@ export default function Home() {
       setIsPasswordError(true)
     }
   };
+  
+  const passwordCheckValidation=()=>{
+    if(password == passwordCheck && password != ""){
+      setPCMessage("");
+      setIsPasswordCheckError(false)
+    }
+    else {
+      setPCMessage("Passwords must match");
+      setIsPasswordCheckError(true)
+    }
+  };
 
   const handleOnEmailChange = (e) => {
     setEmail(e.target.value);
@@ -51,6 +68,10 @@ export default function Home() {
   
   const handleOnPasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+  
+  const handleOnPasswordCheckChange = (e) => {
+    setPasswordCheck(e.target.value);
   };
 
   // const getErrorState = () => {
@@ -74,7 +95,7 @@ export default function Home() {
             
             <div className={styles.relativePos}>
               <h1 className={styles.loginTitle}>
-                Login<br/>
+                Sign Up<br/>
               </h1>
             </div>
 
@@ -93,11 +114,19 @@ export default function Home() {
             <input className={styles.loginInput} type="password" placeholder="Password" aria-required="true" onChange={handleOnPasswordChange} value={password} required/>
             </div>
             <br/>
+            
+            <div className={styles.relativePos}>
+            <p className={isPasswordCheckError ? styles.inputError : styles.noError}>
+                {pcMessage}
+              </p>
+            <input className={styles.loginInput} type="password" placeholder="Repeat password" aria-required="true" onChange={handleOnPasswordCheckChange} value={passwordCheck} required/>
+            </div>
+            <br/>
             <button onClick={validate} className={styles.loginButtonSubmit}>Login to your account</button>
             <br/>
             <p className={styles.loginSignUpCon}>
                 Don't have an account? 
-              <Link href="/signup" className={styles.loginSignUpLink}> Sign Up
+              <Link href="/login" className={styles.loginSignUpLink}> Login
               </Link>
               <br/>
             </p>

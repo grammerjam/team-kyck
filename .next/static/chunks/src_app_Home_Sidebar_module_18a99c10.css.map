@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///mnt/c/Users/cyh21/kyck/team-kyck/src/app/Home/Sidebar.module.css"],"sourcesContent":[".sidebar {\n  width: 96px;\n  height: calc(100vh - 60px);\n  margin: 32px;\n  border-radius: 20px;\n  background-color: #161d2f;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 35px 0;\n  justify-content: space-between;\n  position: fixed;\n  left: 0;\n}\n\n.logo {\n  margin-bottom: 75px;\n}\n\n.navIcons {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 40px;\n  flex: 1;\n}\n\n.iconLink {\n  color: #5A698F;\n  transition: color 0.2s ease;\n}\n\n.iconLink.active {\n  color: white;\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;AAeA;;;;AAIA;;;;;;;;AAQA;;;;;AAKA","debugId":null}}]
-}
