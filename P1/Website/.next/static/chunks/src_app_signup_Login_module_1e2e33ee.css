@@ -1,0 +1,118 @@
+/* [project]/src/app/signup/Login.module.css [app-client] (css) */
+.Login-module__AeydwW__loginImgCon {
+  width: fit-content;
+  margin: 5.4375em auto 5.1875em;
+}
+
+.Login-module__AeydwW__centerer {
+  height: 50%;
+}
+
+.Login-module__AeydwW__loginInfoCon {
+  color: #fff;
+  text-align: center;
+  background-color: #161d2f;
+  border-radius: 6%;
+  width: 25em;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.Login-module__AeydwW__loginTitle {
+  text-align: left;
+  margin-top: 1.5625em;
+  margin-left: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.Login-module__AeydwW__loginInput {
+  color: #fff;
+  caret-color: #fc4747;
+  background-color: #0000;
+  border-bottom: .0625em solid #5a698f;
+  outline: none;
+  width: 21em;
+  height: 2.3125em;
+  padding-left: .75em;
+  transition: border-bottom .3s ease-in-out;
+}
+
+.Login-module__AeydwW__loginInput:focus {
+  border-bottom: .125em solid #ffffff80;
+  outline: none;
+}
+
+.Login-module__AeydwW__loginInput::placeholder {
+  color: #fff;
+  opacity: .5;
+}
+
+.Login-module__AeydwW__loginInput:focus::placeholder {
+  opacity: 0;
+}
+
+.Login-module__AeydwW__relativePos {
+  position: relative;
+}
+
+.Login-module__AeydwW__inputError {
+  color: #fc4747;
+  text-align: right;
+  pointer-events: none;
+  border-bottom: .125em solid red;
+  width: 21em;
+  padding-bottom: .4em;
+  position: absolute;
+  top: .3em;
+  left: 2em;
+}
+
+.Login-module__AeydwW__noError {
+  text-align: right;
+  color: #fff;
+  pointer-events: none;
+  border: none;
+  width: 21em;
+  padding-bottom: .4em;
+  position: absolute;
+  top: 2.3em;
+  left: 2em;
+}
+
+.Login-module__AeydwW__loginButtonSubmit {
+  color: #fff;
+  background-color: #fc4747;
+  border: none;
+  border-radius: .375em;
+  width: 21em;
+  height: 3em;
+  margin-bottom: 1.3333em;
+  transition: color .3s ease-in-out;
+}
+
+.Login-module__AeydwW__loginButtonSubmit:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.Login-module__AeydwW__loginButtonSubmit:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.Login-module__AeydwW__loginSignUpCon {
+  text-align: center;
+  height: 2.6em;
+}
+
+.Login-module__AeydwW__loginSignUpLink {
+  color: #fc4747;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+
+/*# sourceMappingURL=src_app_signup_Login_module_1e2e33ee.css.map*/
