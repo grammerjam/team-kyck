@@ -1,0 +1,41 @@
+
+.title{
+    padding: 150px;
+    font-size: 160px;
+    justify-self: center;
+    color: white;
+}
+
+.backgroundImage{
+    background: url(/LandingPageBackground.png) no-repeat center center; height: 100vh; 
+    background-size:cover; margin-left:0; 
+    margin-right:0;
+}
+  
+.marginMaker{
+    border:solid white 2px; background:#0a0a0a; justify-self: center; color:white; font-family: sans-serif; 
+}
+  
+.margin30px{
+    margin:30px
+}
+  
+.justifySelfCenter{
+    justify-self: center;
+}
+  
+.leftSideSignButton{
+    margin-right:100px;
+}
+  
+.signInButtonColor{
+    color: #FC4747; font-weight: lighter; text-decoration: none;
+}
+  
+.lowerBox{
+    border:solid white 2px; background:#0a0a0a; justify-self: center; color:white; font-family: sans-serif; position:relative; top:18%;
+}
+  
+.margin20px{
+    margin:20px;
+}

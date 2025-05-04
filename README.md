@@ -3,7 +3,8 @@
 ## PROJECTS
 
 **CODENAME: _Fast Forward_**
-- Project 1
+- Project 1: KYCK Flip
+https://team-kyck.vercel.app/
 
 
 
