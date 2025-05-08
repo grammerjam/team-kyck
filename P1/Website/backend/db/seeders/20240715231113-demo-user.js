@@ -1,7 +1,7 @@
 'use strict';
 
 const { User } = require('../models');
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
@@ -16,35 +16,36 @@ module.exports = {
         lastName: 'Snow',
         email: 'jsnow@got.com',
         username: 'kinginthenorth',
-        hashedPassword: bcrypt.hashSync('bastard123'),
+        password: 'bastard123'
+        // hashedPassword: bcrypt.hashSync('bastard123'),
       },
       {
         firstName: 'Jamie',
         lastName: 'Lannister',
         email: 'jlannister@got.com',
         username: 'kingslayer',
-        hashedPassword: bcrypt.hashSync('righthand123')
+        password: 'righthand123'
       },
       {
         firstName: 'Sansa',
         lastName: 'Stark',
         email: 'sstark@got.com',
         username: 'queeninthenorth',
-        hashedPassword: bcrypt.hashSync('killjoffrey123')
+        password: 'killjoffrey123'
       },
       {
         firstName: 'Daenerys',
         lastName: 'Stormborn',
         email: 'dstormborn@got.com',
         username: 'breakerofchains',
-        hashedPassword: bcrypt.hashSync('takethethrone123')
+        password: 'takethethrone123'
       },
       {
         firstName: 'Tyrion',
         lastName: 'Lannister',
         email: 'tlannister@got.com',
         username: 'queenshand',
-        hashedPassword: bcrypt.hashSync('betterplans123')
+        password: 'betterplans123'
       }
     ], { validate: true }); 
   },
