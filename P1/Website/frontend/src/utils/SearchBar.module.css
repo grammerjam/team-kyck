@@ -1,0 +1,56 @@
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin-bottom: 20px;
+    margin-left: 25vh;
+    margin-top: 6vh;
+}
+
+.iconWrapper {
+    position: absolute;
+    left: 10px;
+    z-index: 10;
+    pointer-events: none; /* Makes the icon wrapper not interfere with clicks */
+}
+
+.searchIcon {
+    width: 24px;
+    height: 24px; /* Keeps the aspect ratio */
+}
+
+.searchbar {
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 0px;
+    border: none;
+    transition: border-bottom 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+.searchbar:focus {
+    outline: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.searchbar::placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.searchbar:focus::placeholder {
+    opacity: 0;
+}
+
+/* designing for tablet and mobile */
+@media (max-width: 1024px) {
+    .searchContainer {
+        width: 90%;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 5vh;
+    }
+}
