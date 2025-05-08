@@ -22,6 +22,7 @@ export default function Home() {
   }
 
   const emailValidation=()=>{
+    //This regex is from stack overflow somewhere
     const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if(regEx.test(email)){
       setEMessage("");
