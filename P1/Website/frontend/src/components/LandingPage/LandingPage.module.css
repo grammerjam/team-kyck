@@ -1,0 +1,86 @@
+.backgroundImage{
+    background: url(/LandingPageBackground.png) no-repeat center center; height: 100vh; 
+    background-size:cover; margin-left:0; 
+    margin-right:0;
+}
+  
+.marginMaker{
+    border:solid white 2px; background:#0a0a0a; justify-self: center; color:white; font-family: sans-serif; 
+}
+  
+.margin30px{
+    margin:30px
+}
+  
+.justifySelfCenter{
+    justify-self: center;
+}
+  
+.leftSideSignButton{
+    margin-right:100px;
+}
+  
+.signInButtonColor{
+    color: #FC4747; font-weight: lighter; text-decoration: none;
+}
+  
+.lowerBox{
+    border:solid white 2px; background:#0a0a0a; justify-self: center; color:white; 
+    font-family: sans-serif; 
+    position:relative;
+    max-width: fit-content;
+    width: 66%;
+    margin: 1em;
+}
+  
+.margin20px{
+    margin:20px;
+}
+
+.title{
+    padding: 1px;
+    font-size: 140px;
+    justify-self: center;
+    color: white;
+    margin-bottom: -1em;
+}
+
+@media (max-width: 1500px) {
+    .title{
+        padding: 1px;
+        font-size: 80px;
+        justify-self: center;
+        color: white;
+        margin-bottom: 1em;
+    }
+}
+@media (max-width: 1200px) {
+    .title{
+        padding: 1px;
+        font-size: 60px;
+        justify-self: center;
+        color: white;
+        margin-bottom: 2em;
+
+    }
+}
+
+@media (max-width: 950px) {
+    .title{
+        padding: 1px;
+        font-size: 40px;
+        justify-self: center;
+        color: white;
+        margin-bottom: 3em;
+
+    }
+}
+
+@media (max-width: 370px) {
+    .title{
+        padding: 1px;
+        font-size: 20px;
+        justify-self: center;
+        color: white;
+    }
+}
