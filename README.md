@@ -4,7 +4,13 @@
 
 **CODENAME: _Fast Forward_**
 - Project 1: KYCK Flip
-https://team-kyck.vercel.app/
+https://kyck-flip.onrender.com
+
+    <details>
+    <summary>Database Schema</summary>
+    <br>
+    <img src='./P1/Website/frontend/public/database-schema.png' />
+    </details>
 
 
 
