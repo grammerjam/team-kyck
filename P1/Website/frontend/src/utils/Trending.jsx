@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Trending.module.css';
 
 export function Trending() {
@@ -61,7 +61,7 @@ export function Trending() {
         }, []);
 
     if (loading) return <div className={styles.loading}>Loading trending content...</div>;
-    if (error) return <div className={styles.error}>Error: {error}</div>;;
+    if (error) return <div className={styles.error}>Error: {error}</div>;
     const categoryName = {
         Movie: 'assets/icon-category-movie.svg',
         'TV Series' : 'assets/icon-category-tv.svg',
