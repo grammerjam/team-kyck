@@ -23,7 +23,7 @@ export default function Home() {
 
   const emailValidation=()=>{
     //This regex is from stack overflow somewhere
-    const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const regEx = /^\w*@([\w-]+\.)+[\w-]{2,4}$/;
     if(regEx.test(email)){
       setEMessage("");
       setIsEmailError(false)
@@ -123,7 +123,7 @@ export default function Home() {
             <button onClick={validate} className={styles.loginButtonSubmit}>Login to your account</button>
             <br/>
             <p className={styles.loginSignUpCon}>
-                Don't have an account? 
+                {`Don't have an account? `}
               <a href="/login" className={styles.loginSignUpLink}> Login
               </a>
               <br/>

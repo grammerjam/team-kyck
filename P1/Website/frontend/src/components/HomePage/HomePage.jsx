@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+// import * as React from 'react';
 import {Sidebar} from '../../utils/Sidebar';
 import {Searchbar} from '../../utils/SearchBar';
 import {Trending} from '../../utils/Trending';

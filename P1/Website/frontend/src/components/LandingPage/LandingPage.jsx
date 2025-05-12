@@ -33,7 +33,7 @@ function LandingPage() {
             </div>
             <div className={styles.lowerBox}>
                 <div className={styles.margin20px}>
-                    This site doesn't do much yet, but it will. Team Kyck is on the job!
+                    {`This site doesn't do much yet, but it will. Team Kyck is on the job!`}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+// import * as React from 'react';
 import style from './SearchBar.module.css';
 
 export function Searchbar() {
