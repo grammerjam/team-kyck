@@ -62,16 +62,26 @@ module.exports = (sequelize, DataTypes) => {
 
         }
       },
-      hashedPassword: {
-        type: DataTypes.STRING.BINARY,
+      password: {
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: {
-            args: [60, 60],
-            msg: ''
+            args: [8, 20],
+            msg: 'Password must be between 8 and 20 characters'
           }
         }
       }
+      // hashedPassword: {
+      //   type: DataTypes.STRING.BINARY,
+      //   allowNull: false,
+      //   validate: {
+      //     len: {
+      //       args: [60, 60],
+      //       msg: ''
+      //     }
+      //   }
+      // }
     },
     {
       sequelize,

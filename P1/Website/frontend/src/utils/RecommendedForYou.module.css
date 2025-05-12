@@ -1,0 +1,147 @@
+.recommended {
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-left: 25vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 20px;
+    margin: 0 24px 40px 24vh;
+}
+
+.gridItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnailWrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover overlay - hidden by default */
+.hoverOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* So it doesn't interfere with clicks underneath */
+}
+
+/* Show overlay when hovering over the thumbnail container */
+.thumbnailWrapper:hover:not(:has(.bookmarkIcon:hover)) .hoverOverlay {
+    opacity: 1;
+}
+
+/* Play button styling */
+.playButton {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    padding: 9px 24px 9px 19px;
+    gap: 19px;
+    cursor: pointer;
+}
+
+.playButton span {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+.bookmarkIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+/* Apply background change to the icon container */
+.bookmarkIcon:hover {
+    background-color: rgba(255, 255, 255);
+}
+
+/* Apply filter only to the SVG/image inside the icon */
+.bookmarkIcon:hover svg path,
+.bookmarkIcon:hover img {
+    filter: brightness(0);
+}
+
+.showInfo {
+    padding: 8px 0;
+}
+
+.showMeta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    opacity: 0.75;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.showTitle {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.loading, .error {
+    color: white;
+    margin-left: 25vh;
+    margin-top: 3vh;
+    font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+
+    .recommended {
+        margin-left: 5vh;
+    }
+    .grid {
+        margin-left: 5vh;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
