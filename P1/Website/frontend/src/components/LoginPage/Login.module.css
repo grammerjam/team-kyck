@@ -34,12 +34,13 @@
 }
       
 .loginInput {
+    border: none;
     border-bottom: 0.0625em solid #5A698F; 
     background-color: transparent; 
     color:white; 
-    width: 21em; 
+    width: 24.3em; 
     height: 2.3125em;        
-    outline: none;
+    /* outline: none; */
     transition: border-bottom 0.3s ease-in-out;
     padding-left: 0.75em;
     caret-color: #FC4747;
@@ -66,7 +67,7 @@
 .inputError {
     color: #FC4747;
     position:absolute;
-    top: 0.3em;
+    top: -0.5em;
     left: 2em;
     padding-bottom: 0.4em;
     text-align: right;
@@ -120,4 +121,4 @@
   font-weight: lighter; 
   text-decoration: none;
 }
-        
+

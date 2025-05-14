@@ -19,8 +19,8 @@ export default function LoginPage() {
   }
 
   const emailValidation=()=>{
-    const regEx = /^$/;
-    // const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    //const regEx = /^$/;
+    const regEx = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if(regEx.test(email)){
       setEMessage("");

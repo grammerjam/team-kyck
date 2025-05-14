@@ -1,0 +1,124 @@
+.loginImgCon {
+    margin-left: auto; 
+    margin-right: auto; 
+    width:fit-content; 
+    margin-top: 5.4375em;
+    margin-bottom: 5.1875em;
+}
+
+.centerer{
+    height: 50%
+}
+
+.loginInfoCon {
+    background-color: #161D2F; 
+    border-radius:6%; 
+    width:25em; 
+    margin: auto; 
+    font-family: sans-serif; 
+    color:white; 
+    /* padding: auto;  */
+    text-align: center;
+}
+    
+.loginTitle {
+    font-weight: lighter; 
+    margin-top: 1.5625em;
+    /* margin-bottom: 1em;  */
+    /* float: left; */
+    text-align: left;
+    margin-left: 1em;
+    font-size: 32;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+      
+.loginInput {
+    border: none;
+    border-bottom: 0.0625em solid #5A698F; 
+    background-color: transparent; 
+    color:white; 
+    width: 24.3em; 
+    height: 2.3125em;        
+    /* outline: none; */
+    transition: border-bottom 0.3s ease-in-out;
+    padding-left: 0.75em;
+    caret-color: #FC4747;
+}
+
+.loginInput:focus {
+    outline: none;
+    border-bottom: 0.125em solid rgba(255, 255, 255, 0.5);
+}
+
+.loginInput::placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.loginInput:focus::placeholder {
+    opacity: 0;
+}
+
+.relativePos{
+    position: relative;
+}
+
+.inputError {
+    color: #FC4747;
+    position:absolute;
+    top: -0.5em;
+    left: 2em;
+    padding-bottom: 0.4em;
+    text-align: right;
+    pointer-events: none;
+    border-bottom: 0.125em solid red;
+    width: 21em;
+}
+
+.noError{
+    position: absolute;
+    top: 2.3em;
+    left: 2em;
+    padding-bottom: 0.4em;
+    text-align: right;
+    width: 21em;
+
+    color: white;
+    border: none;
+    pointer-events: none;
+}
+
+.loginButtonSubmit {
+    background-color: #FC4747; 
+    color:white; 
+    border:none; 
+    border-radius: 0.375em; 
+    width: 21em; 
+    height: 3em; 
+    margin-bottom:1.3333em;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.loginButtonSubmit:hover{
+    background-color: white;
+    color: black;
+}
+
+.loginButtonSubmit:active{
+    background-color: black;
+    color: white;
+}
+
+.loginSignUpCon {
+    text-align: center;
+    height:2.6em;
+}
+  
+.loginSignUpLink {
+  color: #FC4747; 
+  font-weight: lighter; 
+  text-decoration: none;
+}
+        
