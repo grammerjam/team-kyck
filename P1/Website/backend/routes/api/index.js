@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const trendingRouter = require('./trending.js');
+const recommendationsRouter = require('./recommendedForYou.js');
 
 const { restoreUser } = require("../../utils/auth.js");
 
@@ -12,5 +14,7 @@ router.use(restoreUser);
 //Set Routers
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
+router.use('/trending', trendingRouter);
+router.use('/recommendedForYou', recommendationsRouter);
 
 module.exports = router;

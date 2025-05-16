@@ -32,32 +32,37 @@ const setTokenCookie = (res, user) => {
     return token;
 };
 
-const restoreUser = (req, res, next) => {
-    // token parsed from cookies
-    const { token } = req.cookies;
-    req.user = null;
+const restoreUser = async (req, res, next) => {
+  // Use optional chaining to prevent errors if cookies is undefined
+  const token = req.cookies?.token;
   
-    return jwt.verify(token, secret, null, async (err, jwtPayload) => {
-      if (err) {
-        return next();
-      }
+  if (!token) {
+    return next(); // No token, continue without authenticating
+  }
   
-      try {
-        const { id } = jwtPayload.data;
-        req.user = await User.findByPk(id, {
-          attributes: {
-            include: ['email', 'createdAt', 'updatedAt']
-          }
-        });
-      } catch (e) {
-        res.clearCookie('token');
-        return next();
-      }
-  
-      if (!req.user) res.clearCookie('token');
-  
+  req.user = null;
+
+  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
+    if (err) {
       return next();
-    });
+    }
+
+    try {
+      const { id } = jwtPayload.data;
+      req.user = await User.findByPk(id, {
+        attributes: {
+          include: ['email', 'createdAt', 'updatedAt']
+        }
+      });
+    } catch (e) {
+      res.clearCookie('token');
+      return next();
+    }
+
+    if (!req.user) res.clearCookie('token');
+
+    return next();
+  });
 };
 
 // If there is no current user, return an error
