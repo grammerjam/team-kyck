@@ -18,7 +18,8 @@ router.get('/', async (req, res) => {
             ],
             order: [['id', 'ASC']]
         });
-
+        
+        console.log('All videos data:', JSON.stringify(videos, null, 2));
 
         // Format the response to include only the necessary fields
         const formattedVideos = videos.map(video => ({
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
             rating: video.rating,
             isBookmarked: video.isBookmarked,
             title: video.title,
-            thumbnailUrl: video.Thumbnails[0] ? video.Thumbnails[0].url : null,
+            thumbnailUrl: video.Thumbnails[0] ? video.Thumbnails[3].src : null,
             isTrending: video.isTrending
         }));
 
@@ -36,12 +37,12 @@ router.get('/', async (req, res) => {
             return res.status(404).json({ message: 'No trending videos found' });
         }
         res.status(200);
+        // Send the formatted response
+        return res.json(formattedVideos);
     } catch (error) {
         console.error('Error fetching trending videos:', error);
         return res.status(500).json({ message: 'Internal server error' });
     }
-    // Send the formatted response
-        return res.json(formattedVideos);
 });
 
 module.exports = router;
