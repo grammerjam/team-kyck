@@ -1,5 +1,5 @@
 const express = require('express');
-require('express-async-errors');
+const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
 
@@ -10,8 +10,16 @@ const isProduction = environment === 'production';
 //Initialize the Express application
 const app = express();
 
-//express.json middleware for parsing JSON bodies
+// Middleware
+app.use(cookieParser());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Static files for production
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.use(express.static(path.resolve("./frontend/dist")));
+}
 
 // Connect all the routes
 app.use(routes); 
