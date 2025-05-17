@@ -34,7 +34,7 @@ export function RecommendedForYou() {
 
     React.useEffect(() => {
         // Fetch data from the JSON file
-        fetch('/assets/data.json', {
+        fetch('api/recommendedForYou', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,10 +47,7 @@ export function RecommendedForYou() {
             return response.json();
         })
         .then(data => {
-            // Use all shows from data.json
-            // Filter out trending items for the grid display
-            const regularShows = data.filter(item => !item.isTrending);
-            setAllShows(regularShows);
+            setAllShows(data);
             setLoading(false);
         })
         .catch(err => {
@@ -75,7 +72,7 @@ export function RecommendedForYou() {
                     <div key={index} className={styles.gridItem}>
                         <div className={styles.thumbnailWrapper}>
                             <img 
-                                src={show.thumbnail.regular.large.replace('./', '/')}
+                                src={show.thumbnailUrl}
                                 alt={show.title}
                                 className={styles.thumbnail}
                             />

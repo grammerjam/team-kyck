@@ -34,7 +34,7 @@ export function Trending() {
 
     React.useEffect(() => {
             // Fetch data from the JSON file
-            fetch('/assets/data.json', {
+            fetch('api/trending', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,10 +47,7 @@ export function Trending() {
                 return response.json();
             })
             .then(data => {
-                // Use all shows from data.json
-                // Filter out trending items for the grid display
-                const trendingShows = data.filter(item => item.isTrending);
-                setTrendingData(trendingShows);
+                setTrendingData(data);
                 setLoading(false);
             })
             .catch(err => {
@@ -75,7 +72,7 @@ export function Trending() {
                     <div key={index} className={styles.trendingItem}>
                         <div className={styles.thumbnailContainer}>
                             <img
-                                src={item.thumbnail.trending.large.replace('./', '/')}
+                                src={item.thumbnailUrl}
                                 alt={item.title}
                                 width={470}
                                 height={230}
