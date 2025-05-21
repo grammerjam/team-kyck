@@ -1,5 +1,6 @@
 const express = require('express');
 const { User } = require('../../db/models');
+const { setTokenCookieSimple } = require('../../utils/auth');
 
 const router = express.Router();
 
@@ -14,6 +15,8 @@ router.post('/', async (req, res) => {
             email: user.email,
             username: user.username,
         };
+
+        await setTokenCookieSimple(res, safeUser);
 
         res.status(201);
         return res.json(safeUser);
