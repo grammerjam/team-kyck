@@ -1,6 +1,7 @@
 const express = require('express');
 const { Op } = require('sequelize');
 const { User } = require('../../db/models');
+const { setTokenCookieSimple } = require('../../utils/auth');
 
 const router = express.Router();
 
@@ -29,6 +30,8 @@ router.post('/', async (req, res, next) => {
         email: user.email,
         username: user.username,
       };
+
+      await setTokenCookieSimple(res, safeUser);
   
       return res.json(safeUser);
     }
@@ -36,6 +39,7 @@ router.post('/', async (req, res, next) => {
 
 // Log out
 router.delete('/', (_req, res) => {
+        res.clearCookie('userToken');
         return res.json({ message: 'success' });
     }
 );
