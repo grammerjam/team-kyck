@@ -31,7 +31,7 @@ router.get('/:type', async (req, res) => {
                 ],
                 order: [['id', 'ASC']]
             });
-        console.log(JSON.stringify(videos, null, 2));
+        // console.log(JSON.stringify(videos, null, 2));
 
             formattedVideos = videos.map(video => ({
                 id: video.id,
