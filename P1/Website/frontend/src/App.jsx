@@ -3,6 +3,7 @@ import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import LandingPage from './components/LandingPage/LandingPage';
 import SignPage from './components/SignupPage/SignupPage';
+import WatchPage from './components/WatchPage/WatchPage';
 
 function Layout() {
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <SignPage/>
       },
+      {
+        path: '/watch',
+        element: <WatchPage/>
+      }
     ]
   }
 ]);
