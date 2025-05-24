@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import styles from './Videos.module.css';
 
 export function Videos() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -22,43 +23,19 @@ export function Videos() {
   }, [isPlaying]);
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+    <div className={styles.videoContainer}>
       {!isPlaying ? (
         <div 
           onClick={handleVideoClick}
-          style={{ 
-            position: 'relative', 
-            cursor: 'pointer',
-            borderRadius: '8px',
-            overflow: 'hidden'
-          }}
+          className={styles.thumbnailWrapper}
         >
           <img 
             src={thumbnailUrl} 
             alt="Video thumbnail" 
-            style={{ width: '100%', display: 'block' }}
+            className={styles.thumbnailImage}
           />
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            backgroundColor: 'rgba(0,0,0,0.7)',
-            borderRadius: '50%',
-            width: '60px',
-            height: '60px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
-            <div style={{
-              width: '0',
-              height: '0',
-              borderTop: '10px solid transparent',
-              borderBottom: '10px solid transparent',
-              borderLeft: '20px solid white',
-              marginLeft: '5px'
-            }}></div>
+          <div className={styles.playButton}>
+            <div className={styles.playIcon}></div>
           </div>
         </div>
       ) : (
@@ -67,7 +44,7 @@ export function Videos() {
           src={videoUrl}
           onClick={handleVideoClick}
           controls
-          style={{ width: '100%', borderRadius: '8px' }}
+          className={styles.videoElement}
           autoPlay
         >
           Your browser does not support the video tag.
