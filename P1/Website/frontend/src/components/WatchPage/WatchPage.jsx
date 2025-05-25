@@ -31,8 +31,8 @@ export default function WatchPage() {
         });
     }, []);
 
-    if (loading) return <div >Loading trending content...</div>;
-    if (error) return <div >Error: {error}</div>;
+    if (loading) return <div style={{color: 'white'}}>Loading trending content...</div>;
+    if (error) return <div  style={{color: 'white'}} >Error: {error}</div>;
     return (
         <>
             <div className={styles.videoMetadata}>
