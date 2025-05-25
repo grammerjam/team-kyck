@@ -1,0 +1,45 @@
+.videoContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  width: 100%;
+  display: block;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playIcon {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid white;
+  margin-left: 5px;
+}
+
+.videoElement {
+  width: 100%;
+  border-radius: 8px;
+}

@@ -5,9 +5,11 @@ export function Sidebar() {
     return (
         <div className={styles.sidebar}>
             {/* Logo */}
-            <div className={styles.logo}>
-                <img src="assets/logo.svg" alt="Logo" />
-            </div>
+            <a href="/">
+                <div className={styles.logo}>
+                    <img src="assets/logo.svg" alt="Logo" />
+                </div>
+            </a>
             
             <div className={styles.navIcons}>
                 {/* Home Icon */}

@@ -3,9 +3,10 @@ const {Video, Thumbnail} = require('../../db/models');
 const router = express.Router();
 const { Op } = require('sequelize');
 
-router.get('/:type', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const { type } = req.params;
+        
         let formattedVideos = [];
 
         // Validate the type parameter
