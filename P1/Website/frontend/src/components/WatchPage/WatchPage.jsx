@@ -3,6 +3,7 @@ import {Videos} from '../../utils/Videos';
 import {Comments} from '../../utils/Comments';
 import styles from './WatchPage.module.css';
 import { useSearchParams } from 'react-router-dom';
+import { Sidebar } from '../../utils/Sidebar';
 
 export default function WatchPage() {
     const [showInfor, setShowInfo] = useState([]);
@@ -43,6 +44,7 @@ export default function WatchPage() {
     };
     return (
         <>
+            <Sidebar />
             <div className={styles.videoMetadata}>
                 <h1 className={styles.showTitle}>{showInfor.title}</h1>
                 <div className={styles.showInfo}>
