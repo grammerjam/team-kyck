@@ -37,13 +37,26 @@ export default function WatchPage() {
 
     if (loading) return <div style={{color: 'white'}}>Loading trending content...</div>;
     if (error) return <div  style={{color: 'white'}} >Error: {error}</div>;
+    const categoryName = {
+        Movie: 'assets/icon-category-movie.svg',
+        'TV Series' : 'assets/icon-category-tv.svg',
+    };
     return (
         <>
             <div className={styles.videoMetadata}>
                 <h1 className={styles.showTitle}>{showInfor.title}</h1>
                 <div className={styles.showInfo}>
                     <span>Year: {showInfor.year}</span>
+                    <span>•</span>
+                    <span style={{height: '12px', width: '12px', display: 'inline-block'}}>
+                        <img
+                        src={categoryName[showInfor.category]}
+                        width={12}
+                        height={12}
+                        />
+                    </span>
                     <span>Category: {showInfor.category}</span>
+                    <span>•</span>
                     <span>Rating: {showInfor.rating}</span>
                 </div>
             </div>
