@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: left;
   padding: 1rem;
+  margin-left: 25vh; /* Increased from 5vh to avoid sidebar overlap */
+  max-width: calc(100% - 30vh); /* Prevent content from stretching too wide */
 }
 
 .showTitle {
@@ -11,7 +13,6 @@
   margin-bottom: 1rem;
   color: white;
 }
-
 
 .showInfo {
   display: flex;
