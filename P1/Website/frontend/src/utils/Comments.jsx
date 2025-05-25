@@ -56,7 +56,7 @@ export function Comments(){
 
     return(
         <>
-            <h1 className={styles.commentSectionTitle}>Comments</h1>
+            <h1 className={styles.commentSectionTitle}>{comments.length} Comments</h1>
             <div className={styles.commentsContainer}>
                 {loading ? (
                     <p>Loading comments...</p>
