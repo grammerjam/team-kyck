@@ -38,7 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/watch',
         element: <WatchPage/>
-      }
+      },
+      {
+        path:'/watch/:id',
+        element: <WatchPage/>
+      },
     ]
   }
 ]);
