@@ -12,3 +12,35 @@
   margin-top: 3rem;
   color: white;
 }
+
+.commentItem {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #161d2f;
+  border-radius: 0.5rem;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.timestamp {
+  color: #5a698f;
+  font-size: 0.875rem;
+}
+
+.commentText {
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.error {
+  color: #fc4747;
+}
