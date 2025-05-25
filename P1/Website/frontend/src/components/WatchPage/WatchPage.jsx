@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Videos} from '../../utils/Videos';
+import styles from './WatchPage.module.css';
 
 export default function WatchPage() {
     const [showInfor, setShowInfo] = useState([]);
@@ -34,10 +35,12 @@ export default function WatchPage() {
     if (error) return <div >Error: {error}</div>;
     return (
         <>
-            <h1>{showInfor.title}</h1>
-            <span>Year: {showInfor.year}</span>
-            <span>Category: {showInfor.category}</span>
-            <span>Rating: {showInfor.rating}</span>
+            <h1 className={styles.showTitle}>{showInfor.title}</h1>
+            <div className={styles.showInfo}>
+                <span>Year: {showInfor.year}</span>
+                <span>Category: {showInfor.category}</span>
+                <span>Rating: {showInfor.rating}</span>
+            </div>
             <Videos />
         </>
     );

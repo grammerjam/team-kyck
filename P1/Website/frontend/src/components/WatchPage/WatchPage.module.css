@@ -1,0 +1,16 @@
+.showTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+color: white;
+}
+
+
+.showInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  opacity: 0.75;
+  font-size: 1rem;
+}
