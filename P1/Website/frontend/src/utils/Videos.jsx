@@ -1,15 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Videos.module.css';
 
-export function Videos() {
+export function Videos({videoId}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  
-  // Placeholder video URL
   const videoUrl = "/assets/sample-video.mp4";
+  const [thumbnailUrl, setThumbnail] = useState(null); 
 
   useEffect(() => {
-    fetch('api/showInfo/video', {
+    fetch(`api/showInfo/id?id=${videoId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -23,20 +22,17 @@ export function Videos() {
     })
     .then(data => {
       // Assuming the video URL is in the response data
-      // setVideoUrl(data.videoUrl);
-      console.log("Video data fetched successfully:", data);
+      setThumbnail(data.thumbnailUrl);
     })
     .catch(err => {
       console.error('Error fetching video data:', err);
     });
   }, []);
   
-  // Placeholder thumbnail
-  const thumbnailUrl = "/assets/thumbnails/sample-thumbnail.jpg";
-  
   const handleVideoClick = () => {
     setIsPlaying(true);
   };
+  console.log(thumbnailUrl);
 
   // Add this effect to play the video after it's rendered
   useEffect(() => {

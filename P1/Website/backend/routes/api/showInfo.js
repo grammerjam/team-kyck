@@ -2,7 +2,6 @@ const express = require('express');
 const {Video, Thumbnail} = require('../../db/models');
 const router = express.Router();
 const { Op } = require('sequelize');
-const { route } = require('./types');
 
 router.get('/id', async (req, res) => {
     const { id } = req.query;

@@ -33,7 +33,7 @@ export default function WatchPage() {
             setError(err.message);
             setLoading(false);
         });
-    }, []);
+    }, [id]);
 
     if (loading) return <div style={{color: 'white'}}>Loading trending content...</div>;
     if (error) return <div  style={{color: 'white'}} >Error: {error}</div>;
@@ -60,7 +60,7 @@ export default function WatchPage() {
                     <span>Rating: {showInfor.rating}</span>
                 </div>
             </div>
-            <Videos />
+            <Videos videoId={id}/>
             <Comments />
         </>
     );
