@@ -48,7 +48,7 @@ export default function WatchPage() {
                 <div className={styles.showInfo}>
                     <span>Year: {showInfor.year}</span>
                     <span>•</span>
-                    <span style={{height: '12px', width: '12px', display: 'inline-block'}}>
+                    <span style={{height: '12px', width: '12px', display: 'inline-block', marginBottom: '4px'}}>
                         <img
                         src={categoryName[showInfor.category]}
                         width={12}

@@ -7,6 +7,29 @@ export function Videos() {
   
   // Placeholder video URL
   const videoUrl = "/assets/sample-video.mp4";
+
+  useEffect(() => {
+    fetch('api/showInfo/video', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch video data');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Assuming the video URL is in the response data
+      // setVideoUrl(data.videoUrl);
+      console.log("Video data fetched successfully:", data);
+    })
+    .catch(err => {
+      console.error('Error fetching video data:', err);
+    });
+  }, []);
   
   // Placeholder thumbnail
   const thumbnailUrl = "/assets/thumbnails/sample-thumbnail.jpg";
