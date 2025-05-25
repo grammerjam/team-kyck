@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Videos} from '../../utils/Videos';
+import {Comments} from '../../utils/Comments';
 import styles from './WatchPage.module.css';
 
 export default function WatchPage() {
@@ -44,6 +45,7 @@ export default function WatchPage() {
                 </div>
             </div>
             <Videos />
+            <Comments />
         </>
     );
 }
