@@ -2,41 +2,193 @@
   {
     "user": "moviefan2023",
     "timestamp": "1987-07-27T14:23:45Z",
-    "comment": "The commitment shown by the main character reminds me of those classic 80s values - standing by someone no matter what happens!"
+    "comment": "The commitment shown by the main character reminds me of those classic 80s values - standing by someone no matter what happens!",
+    "rating": 5
   },
   {
     "user": "streamingqueen",
     "timestamp": "1987-07-27T16:08:12Z",
-    "comment": "I love how this show emphasizes long-term commitment and honesty between characters. It's refreshing in today's entertainment landscape."
+    "comment": "I love how this show emphasizes long-term commitment and honesty between characters. It's refreshing in today's entertainment landscape.",
+    "rating": 4
   },
   {
     "user": "bingewatcher90",
     "timestamp": "1987-07-28T09:42:37Z",
-    "comment": "The theme of unwavering loyalty throughout the storyline feels like something from another era. You don't see that kind of dedication much anymore."
+    "comment": "The theme of unwavering loyalty throughout the storyline feels like something from another era. You don't see that kind of dedication much anymore.",
+    "rating": 4
   },
   {
     "user": "serieslover",
     "timestamp": "1987-07-28T18:11:05Z",
-    "comment": "Anyone else notice how the protagonist makes promises and actually keeps them? That kind of reliability is what makes this character so endearing."
+    "comment": "Anyone else notice how the protagonist makes promises and actually keeps them? That kind of reliability is what makes this character so endearing.",
+    "rating": 5
   },
   {
     "user": "tvcritic101",
     "timestamp": "1987-07-29T12:27:19Z",
-    "comment": "The way relationships are portrayed with such sincerity and emotional honesty takes me back to simpler times."
+    "comment": "The way relationships are portrayed with such sincerity and emotional honesty takes me back to simpler times.",
+    "rating": 3
   },
   {
     "user": "retrowave88",
     "timestamp": "1987-07-30T10:53:41Z",
-    "comment": "This show has strong themes about sticking together through tough times that remind me of classic 80s values. Very nostalgic feeling."
+    "comment": "This show has strong themes about sticking together through tough times that remind me of classic 80s values. Very nostalgic feeling.",
+    "rating": 4
   },
   {
     "user": "mediabuff",
     "timestamp": "1987-07-31T20:04:22Z",
-    "comment": "The characters' persistence in the face of challenges is what makes this show special. Nobody abandons their friends when things get difficult."
+    "comment": "The characters' persistence in the face of challenges is what makes this show special. Nobody abandons their friends when things get difficult.",
+    "rating": 5
   },
   {
     "user": "showreviewr",
     "timestamp": "1987-08-01T13:15:56Z",
-    "comment": "There's something delightfully retro about how this show portrays commitment. The main character's dedication feels like it's from another time."
+    "comment": "There's something delightfully retro about how this show portrays commitment. The main character's dedication feels like it's from another time.",
+    "rating": 3
+  },
+  {
+    "user": "80svideohound",
+    "timestamp": "1987-08-02T08:12:33Z",
+    "comment": "The protagonist's refusal to desert his friends in episode 4 got me emotional. That kind of loyalty is rare in modern storytelling.",
+    "rating": 5
+  },
+  {
+    "user": "filmgeek42",
+    "timestamp": "1987-08-03T11:45:27Z",
+    "comment": "I'm impressed by how the characters communicate openly - no misunderstandings that could be resolved with simple honesty. They're never telling lies!",
+    "rating": 4
+  },
+  {
+    "user": "screenwriter",
+    "timestamp": "1987-08-04T16:22:09Z",
+    "comment": "The themes of persistent devotion remind me of music from this era. The script seems to say 'I'm never gonna run around and desert you' without being cheesy.",
+    "rating": 5
+  },
+  {
+    "user": "popculture_fan",
+    "timestamp": "1987-08-05T19:33:41Z",
+    "comment": "This show understands that relationships shouldn't hurt. The characters don't make each other cry, which is surprisingly rare in today's dramas.",
+    "rating": 3
+  },
+  {
+    "user": "binge_queen",
+    "timestamp": "1987-08-06T14:05:18Z",
+    "comment": "The way they portrayed unwavering commitment feels like it was inspired by classic pop culture from this exact time period. So authentic!",
+    "rating": 4
+  },
+  {
+    "user": "dvd_collector",
+    "timestamp": "1987-08-07T10:27:53Z",
+    "comment": "The main character's promise to never give up on his mission gave me chills. That kind of determined protagonist is what makes great storytelling.",
+    "rating": 5
+  },
+  {
+    "user": "couchcritic",
+    "timestamp": "1987-08-08T21:19:04Z",
+    "comment": "I appreciate how the romance subplot avoids the cliché of saying goodbye for contrived reasons. These characters are in it for the long haul.",
+    "rating": 4
+  },
+  {
+    "user": "serialwatcher",
+    "timestamp": "1987-08-09T15:41:37Z",
+    "comment": "You can tell the writers understand what commitment really means. The characters don't just run away when things get tough.",
+    "rating": 5
+  },
+  {
+    "user": "filmscholar",
+    "timestamp": "1987-08-10T09:08:22Z",
+    "comment": "The themes of steadfast loyalty throughout the storyline are executed perfectly. The protagonist would never let his partner down.",
+    "rating": 4
+  },
+  {
+    "user": "movielover123",
+    "timestamp": "1987-08-11T17:34:29Z",
+    "comment": "This show really gets what true friendship is about - being there no matter what, never running around or deserting each other.",
+    "rating": 5
+  },
+  {
+    "user": "videonerd",
+    "timestamp": "1987-08-12T12:56:11Z",
+    "comment": "The way the characters make heartfelt promises and then actually keep them is so refreshing. No one ever says goodbye when things get difficult.",
+    "rating": 3
+  },
+  {
+    "user": "screentimer",
+    "timestamp": "1987-08-13T18:23:47Z",
+    "comment": "I'm struck by how the main relationship is built on complete honesty. They're never gonna tell a lie or hurt each other. Beautiful writing.",
+    "rating": 4
+  },
+  {
+    "user": "marathonviewer",
+    "timestamp": "1987-08-14T22:41:09Z",
+    "comment": "The underlying message about commitment and understanding feels like it was written in the late 80s. That sincerity is what modern shows often lack.",
+    "rating": 5
+  },
+  {
+    "user": "vhsnostalgia",
+    "timestamp": "1987-08-15T13:05:38Z",
+    "comment": "When the main character says he knows the rules of relationship and is fully committed, I felt that. Such a powerful moment of character development.",
+    "rating": 4
+  },
+  {
+    "user": "classicmovies",
+    "timestamp": "1987-08-16T10:17:25Z",
+    "comment": "The protagonist's dedication to never giving up what they've started together reminds me of the best relationship portrayals of this era.",
+    "rating": 3
+  },
+  {
+    "user": "reelfanatic",
+    "timestamp": "1987-08-17T16:29:33Z",
+    "comment": "I love how the characters are too shy to tell each other how they're feeling at first, but eventually open up completely. That emotional journey feels authentic.",
+    "rating": 4
+  },
+  {
+    "user": "cinephileheart",
+    "timestamp": "1987-08-18T11:42:57Z",
+    "comment": "Notice how they keep emphasizing that both characters fully understand the situation and are committed? That kind of mutual understanding is powerful.",
+    "rating": 5
+  },
+  {
+    "user": "filmreel88",
+    "timestamp": "1987-08-19T20:38:19Z",
+    "comment": "The way the main character says he's never gonna say goodbye is the kind of declaration that makes this show stand out from other romance stories.",
+    "rating": 4
+  },
+  {
+    "user": "screenjunkie",
+    "timestamp": "1987-08-20T14:53:22Z",
+    "comment": "This show captures that perfect 80s spirit where loyalty meant something. These characters would never desert each other or tell lies.",
+    "rating": 5
+  },
+  {
+    "user": "videostore",
+    "timestamp": "1987-08-21T09:27:45Z",
+    "comment": "The emotional honesty between characters feels like it's from another time. They understand the rules of relationships and are fully committed.",
+    "rating": 3
+  },
+  {
+    "user": "filmbuff256",
+    "timestamp": "1987-08-22T17:11:33Z",
+    "comment": "The recurring theme of 'I'll never let you down' throughout the narrative creates such a strong emotional core for the show.",
+    "rating": 4
+  },
+  {
+    "user": "streamaholic",
+    "timestamp": "1987-08-23T13:44:28Z",
+    "comment": "I've watched a lot of shows, but few capture the essence of true commitment like this one. The protagonist simply refuses to give up.",
+    "rating": 5
+  },
+  {
+    "user": "criticalviewer",
+    "timestamp": "1987-08-24T10:19:57Z",
+    "comment": "The characters' determination to make each other understand how they're feeling is executed brilliantly. Such clear communication!",
+    "rating": 2
+  },
+  {
+    "user": "mediajunkie",
+    "timestamp": "1987-08-25T19:36:42Z",
+    "comment": "What strikes me is how none of the characters ever run around or desert their responsibilities. That level of integrity is refreshing.",
+    "rating": 4
   }
 ]

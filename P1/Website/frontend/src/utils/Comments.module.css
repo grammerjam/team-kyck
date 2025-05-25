@@ -5,6 +5,8 @@
   color: white;
 }
 
+
+
 .commentSectionTitle {
   font-size: 1.5rem;
   font-weight: bold;
@@ -14,26 +16,28 @@
 }
 
 .commentItem {
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 16px;
+  margin-bottom: 16px;
   background-color: #161d2f;
-  border-radius: 0.5rem;
+  border-radius: 8px;
 }
 
 .commentHeader {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 8px;
 }
 
 .username {
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 .timestamp {
+  font-size: 0.8rem;
   color: #5a698f;
-  font-size: 0.875rem;
+  margin-left: auto;
 }
 
 .commentText {
@@ -43,4 +47,25 @@
 
 .error {
   color: #fc4747;
+}
+
+.rating{
+    display: flex;
+    align-items: left;
+    gap: 0.5rem;
+}
+
+.starRating {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.starFilled {
+  color: #ffb400;
+  margin-right: 2px;
+}
+
+.starEmpty {
+  color: #777;
+  margin-right: 2px;
 }

@@ -36,6 +36,24 @@ export function Comments(){
         });
     };
 
+    // Generate star rating display
+    const renderStars = (rating) => {
+        const stars = [];
+        const maxRating = 5;
+        
+        for (let i = 1; i <= maxRating; i++) {
+            if (i <= rating) {
+                // Filled star
+                stars.push(<span key={i} className={styles.starFilled}>★</span>);
+            } else {
+                // Empty star
+                stars.push(<span key={i} className={styles.starEmpty}>☆</span>);
+            }
+        }
+        
+        return <div className={styles.starRating}>{stars}</div>;
+    };
+
     return(
         <>
             <h1 className={styles.commentSectionTitle}>Comments</h1>
@@ -51,8 +69,10 @@ export function Comments(){
                         <div key={index} className={styles.commentItem}>
                             <div className={styles.commentHeader}>
                                 <span className={styles.username}>{comment.user}</span>
+                                <div className={styles.rating}>{comment.rating && renderStars(comment.rating)}</div>
                                 <span className={styles.timestamp}>{formatDate(comment.timestamp)}</span>
                             </div>
+                            {/* Display star rating */}
                             <p className={styles.commentText}>{comment.comment}</p>
                         </div>
                     ))
