@@ -35,11 +35,13 @@ export default function WatchPage() {
     if (error) return <div >Error: {error}</div>;
     return (
         <>
-            <h1 className={styles.showTitle}>{showInfor.title}</h1>
-            <div className={styles.showInfo}>
-                <span>Year: {showInfor.year}</span>
-                <span>Category: {showInfor.category}</span>
-                <span>Rating: {showInfor.rating}</span>
+            <div className={styles.videoMetadata}>
+                <h1 className={styles.showTitle}>{showInfor.title}</h1>
+                <div className={styles.showInfo}>
+                    <span>Year: {showInfor.year}</span>
+                    <span>Category: {showInfor.category}</span>
+                    <span>Rating: {showInfor.rating}</span>
+                </div>
             </div>
             <Videos />
         </>

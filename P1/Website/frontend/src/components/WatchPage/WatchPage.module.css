@@ -1,8 +1,15 @@
+.videoMetadata {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1rem;
+}
+
 .showTitle {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-color: white;
+  color: white;
 }
 
 
