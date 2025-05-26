@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './Trending.module.css';
+import { Link } from 'react-router-dom';
 
 export function Trending() {
     const [trendingData, setTrendingData] = useState([]);
@@ -69,7 +70,7 @@ export function Trending() {
             <h2 className={styles.trending}>Trending</h2>
             <div className={styles.trendingContainer}>
                 {trendingData.map((item, index) => (
-                    <div key={index} className={styles.trendingItem}>
+                    <Link key={index} className={styles.trendingItem} to={`/watch?id=${item.id}`}>
                         <div className={styles.thumbnailContainer}>
                             <img
                                 src={item.thumbnailUrl}
@@ -113,7 +114,7 @@ export function Trending() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

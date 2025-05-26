@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
             order: [['id', 'ASC']]
         });
         
-        console.log('All videos data:', JSON.stringify(videos, null, 2));
+        // console.log('All videos data:', JSON.stringify(videos, null, 2));
 
         // Format the response to include only the necessary fields
         const formattedVideos = videos.map(video => ({

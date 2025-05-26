@@ -1,0 +1,24 @@
+.videoMetadata {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1rem;
+  margin-left: 25vh; /* Increased from 5vh to avoid sidebar overlap */
+  max-width: calc(100% - 30vh); /* Prevent content from stretching too wide */
+}
+
+.showTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.showInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  opacity: 0.75;
+  font-size: 1rem;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './RecommendedForYou.module.css';
+import { Link } from 'react-router-dom';
 
 export function RecommendedForYou() {
     const [allShows, setAllShows] = React.useState([]);
@@ -69,7 +70,7 @@ export function RecommendedForYou() {
             <h2 className={styles.recommended}>Recommended For You</h2>
             <div className={styles.grid}>
                 {allShows.map((show, index) => (
-                    <div key={index} className={styles.gridItem}>
+                    <Link key={index} className={styles.gridItem} to={`/watch?id=${show.id}`}>
                         <div className={styles.thumbnailWrapper}>
                             <img 
                                 src={show.thumbnailUrl}
@@ -109,7 +110,7 @@ export function RecommendedForYou() {
                             </div>
                             <h3 className={styles.showTitle}>{show.title}</h3>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

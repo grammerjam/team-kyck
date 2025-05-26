@@ -3,9 +3,10 @@ const {Video, Thumbnail} = require('../../db/models');
 const router = express.Router();
 const { Op } = require('sequelize');
 
-router.get('/:type', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const { type } = req.params;
+        
         let formattedVideos = [];
 
         // Validate the type parameter
@@ -31,7 +32,7 @@ router.get('/:type', async (req, res) => {
                 ],
                 order: [['id', 'ASC']]
             });
-        console.log(JSON.stringify(videos, null, 2));
+        // console.log(JSON.stringify(videos, null, 2));
 
             formattedVideos = videos.map(video => ({
                 id: video.id,
