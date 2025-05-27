@@ -4,6 +4,7 @@ import {Comments} from '../../utils/Comments';
 import styles from './WatchPage.module.css';
 import { useSearchParams } from 'react-router-dom';
 import { Sidebar } from '../../utils/Sidebar';
+import { MainLayout } from '../../layouts/MainLayout';
 
 export default function WatchPage() {
     const [showInfor, setShowInfo] = useState([]);
@@ -44,7 +45,8 @@ export default function WatchPage() {
     };
     return (
         <>
-            <Sidebar />
+            <MainLayout>
+            {/*<Sidebar />*/}
             <div className={styles.videoMetadata}>
                 <h1 className={styles.showTitle}>{showInfor.title}</h1>
                 <div className={styles.showInfo}>
@@ -64,6 +66,7 @@ export default function WatchPage() {
             </div>
             <Videos videoId={id}/>
             <Comments />
+            </MainLayout>
         </>
     );
 }
