@@ -33,6 +33,19 @@
   margin-bottom: 8px;
 }
 
+
+.profileLink {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-right: 3vh;
+  }
+.profileLink img {
+  width: 30px;
+  height: 30px;
+}
+  
+
 .username {
   font-weight: bold;
   color: #fff;

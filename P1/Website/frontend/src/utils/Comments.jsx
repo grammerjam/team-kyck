@@ -68,6 +68,10 @@ export function Comments(){
                     comments.map((comment, index) => (
                         <div key={index} className={styles.commentItem}>
                             <div className={styles.commentHeader}>
+                                <a href="/profile" className={styles.profileLink}>
+                                    <img src="assets/image-avatar.png" 
+                                    alt="Home" />
+                                </a>
                                 <span className={styles.username}>{comment.user}</span>
                                 <div className={styles.rating}>{comment.rating && renderStars(comment.rating)}</div>
                                 <span className={styles.timestamp}>{formatDate(comment.timestamp)}</span>
