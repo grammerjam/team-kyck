@@ -2,7 +2,7 @@
     width: 96px;
     height: calc(100vh - 20vh);
     margin: 32px;
-    margin-top: 0px;
+    margin-top: 5vh;
     border-radius: 20px;
     background-color: #161d2f;
     display: flex;
