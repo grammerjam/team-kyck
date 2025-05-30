@@ -139,6 +139,28 @@ export function Videos({videoId}) {
           ))}
         </div>
       )}
+      {/* Danmu Controls */}
+      <div className={styles.danmuControls}>
+        <form onSubmit={handleDanmuSubmit} className={styles.danmuForm}>
+          <input
+            type="text"
+            value={newDanmu}
+            onChange={(e) => setNewDanmu(e.target.value)}
+            placeholder="send a danmu"
+            className={styles.danmuInput}
+            maxLength={50}
+          />
+          <button type="submit" className={styles.danmuSubmit}>
+            send
+          </button>
+        </form>
+        <button 
+          onClick={() => setShowDanmu(!showDanmu)}
+          className={`${styles.danmuToggle} ${!showDanmu ? styles.danmuOff : ''}`}
+        >
+          Danmu {showDanmu ? 'ON' : 'OFF'}
+        </button>
+      </div>
     </div>
   );
 }
