@@ -34,7 +34,7 @@ export function Videos({videoId}) {
     .catch(err => {
       console.error('Error fetching video data:', err);
     });
-  });
+  }, [videoId]);
 
   useEffect(() => {
     fetch('assets/danmu.json')
@@ -45,11 +45,10 @@ export function Videos({videoId}) {
       .catch(err => {
         console.error('Error fetching danmu data:', err);
       });
-  })
+  }, [])
   
   const handleVideoClick = () => {
     setIsPlaying(true);
-
   };
 
   const handleTimeUpdate = () => {
@@ -108,8 +107,7 @@ export function Videos({videoId}) {
       )}
       { /* Danmu Overlay */}
       {showDanmu && (
-        <div className={styles.danmuOverlay}
-        onClick={handleVideoClick}>
+        <div className={styles.danmuOverlay}>
           {getVisibleDanmu().map((danmu, index) => (
             <Danmu 
               key={`${danmu.id}-${danmu.time}`}
