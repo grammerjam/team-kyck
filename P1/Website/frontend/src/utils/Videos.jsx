@@ -3,8 +3,6 @@ import styles from './Videos.module.css';
 import { Danmu } from './Damu/Danmu';
 
 export function Videos({videoId}) {
-  const fs = require('fs');
-
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
   const videoUrl = "/assets/sample-video.mp4";
@@ -36,7 +34,7 @@ export function Videos({videoId}) {
     .catch(err => {
       console.error('Error fetching video data:', err);
     });
-  }, []);
+  });
 
   useEffect(() => {
     fetch('assets/danmu.json')
@@ -51,6 +49,7 @@ export function Videos({videoId}) {
   
   const handleVideoClick = () => {
     setIsPlaying(true);
+
   };
 
   const handleTimeUpdate = () => {
@@ -61,23 +60,23 @@ export function Videos({videoId}) {
 
   const handleDanmuSubmit = (e) => {
     e.preventDefault();
-    if (newDanmu.trim() !== '') {
-      const newDanmuItem = {
-        text: newDanmu,
-        time: videoRef.current ? videoRef.current.currentTime : 0,
-        color: '#FFFFFF', // Default color, can be randomized or set based on user preference
-      };
-      setDanmuList([...danmuList, newDanmuItem]);
-      setNewDanmu('');
-    }
-    fs.writeFile('assets/danmu.json', JSON.stringify([...danmuList, newDanmu]), (err) => {
-      if (err) {
-        console.error('Error writing to danmu.json:', err);
-      } else {
-        console.log('Danmu saved successfully!');
-      }
-    }
-  );
+    // if (newDanmu.trim() !== '') {
+    //   const newDanmuItem = {
+    //     text: newDanmu,
+    //     time: videoRef.current ? videoRef.current.currentTime : 0,
+    //     color: '#FFFFFF', // Default color, can be randomized or set based on user preference
+    //   };
+    //   setDanmuList([...danmuList, newDanmuItem]);
+    //   setNewDanmu('');
+    // }
+    // fs.writeFile('assets/danmu.json', JSON.stringify([...danmuList, newDanmu]), (err) => {
+    //   if (err) {
+    //     console.error('Error writing to danmu.json:', err);
+    //   } else {
+    //     console.log('Danmu saved successfully!');
+    //   }
+    // }
+  //);
   }
 
   // Function to get visible danmu based on current time
@@ -126,7 +125,8 @@ export function Videos({videoId}) {
       )}
       { /* Danmu Overlay */}
       {showDanmu && (
-        <div className={styles.danmuOverlay}>
+        <div className={styles.danmuOverlay}
+        onClick={handleVideoClick}>
           {getVisibleDanmu().map((danmu, index) => (
             <Danmu 
               key={`${danmu.id}-${danmu.time}`}
