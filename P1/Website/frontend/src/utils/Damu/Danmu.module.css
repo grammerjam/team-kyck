@@ -1,0 +1,6 @@
+.danmu{
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+}
