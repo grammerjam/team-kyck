@@ -60,23 +60,6 @@ export function Videos({videoId}) {
 
   const handleDanmuSubmit = (e) => {
     e.preventDefault();
-    // if (newDanmu.trim() !== '') {
-    //   const newDanmuItem = {
-    //     text: newDanmu,
-    //     time: videoRef.current ? videoRef.current.currentTime : 0,
-    //     color: '#FFFFFF', // Default color, can be randomized or set based on user preference
-    //   };
-    //   setDanmuList([...danmuList, newDanmuItem]);
-    //   setNewDanmu('');
-    // }
-    // fs.writeFile('assets/danmu.json', JSON.stringify([...danmuList, newDanmu]), (err) => {
-    //   if (err) {
-    //     console.error('Error writing to danmu.json:', err);
-    //   } else {
-    //     console.log('Danmu saved successfully!');
-    //   }
-    // }
-  //);
   }
 
   // Function to get visible danmu based on current time
