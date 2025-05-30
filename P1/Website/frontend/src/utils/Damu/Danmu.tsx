@@ -1,5 +1,5 @@
 import {useEffect, useState, useRef} from 'react';
-import styles from './Danmu.module.css';
+import  './Danmu.css';
 
 
 interface DanmuProps {
@@ -36,7 +36,7 @@ export function Danmu(DanmuProps: DanmuProps) {
     return (
         <div
             ref={danmuRef}
-            className={styles.danmu}
+            className='danmu'
             style={{
                 color: DanmuProps.danmu.color || 'white',
                 transform: `translate(${position.x}px, ${position.y}px)`,

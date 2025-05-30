@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Videos.module.css';
+import { Danmu } from './Damu/Danmu';
+import { get } from 'http';
 
 export function Videos({videoId}) {
   const fs = require('fs');
@@ -122,6 +124,20 @@ export function Videos({videoId}) {
         >
           Your browser does not support the video tag.
         </video>
+      )}
+      { /* Danmu Overlay */}
+      {showDanmu && (
+        <div className={styles.danmuOverlay}>
+          {getVisibleDanmu().map((danmu, index) => (
+            <Danmu 
+              key={`${danmu.id}-${danmu.time}`}
+              danmu={danmu}
+              currentTime={currentTime}
+              index={index}            
+              containerWidth={videoRef.current?.offsetWidth || 800}
+            />
+          ))}
+        </div>
       )}
     </div>
   );
