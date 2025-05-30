@@ -1,0 +1,22 @@
+[
+    { "id": 1, "text": "First!", "time": 5, "color": "#ffffff" },
+    { "id": 2, "text": "This part is amazing!", "time": 15, "color": "#ff6b6b" },
+    { "id": 3, "text": "LOL", "time": 25, "color": "#4ecdc4" },
+    { "id": 4, "text": "Great video!", "time": 35, "color": "#45b7d1" },
+    { "id": 5, "text": "Who's watching in 2023?", "time": 45, "color": "#fed766" },
+    { "id": 6, "text": "The editing is on point!", "time": 55, "color": "#fe6d73" },
+    { "id": 7, "text": "This made my day", "time": 65, "color": "#17c3b2" },
+    { "id": 8, "text": "Can't stop watching", "time": 75, "color": "#7678ed" },
+    { "id": 9, "text": "Subscribed!", "time": 85, "color": "#ffcb77" },
+    { "id": 10, "text": "Wait for it...", "time": 95, "color": "#ff9f1c" },
+    { "id": 11, "text": "That plot twist tho", "time": 105, "color": "#e07a5f" },
+    { "id": 12, "text": "Is this live?", "time": 115, "color": "#81b29a" },
+    { "id": 13, "text": "Replay x100", "time": 125, "color": "#f15bb5" },
+    { "id": 14, "text": "Best content ever", "time": 135, "color": "#00bbf9" },
+    { "id": 15, "text": "Turn up the volume!", "time": 145, "color": "#38b000" },
+    { "id": 16, "text": "Mind blown 🤯", "time": 155, "color": "#9b5de5" },
+    { "id": 17, "text": "Share this everyone", "time": 165, "color": "#00f5d4" },
+    { "id": 18, "text": "Perfect timing", "time": 175, "color": "#fb5607" },
+    { "id": 19, "text": "I can't believe it!", "time": 185, "color": "#ffbe0b" },
+    { "id": 20, "text": "More videos like this please!", "time": 195, "color": "#8ac926" }
+]

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sidebar } from '../utils/Sidebar';
 import styles from './MainLayout.module.css';
 

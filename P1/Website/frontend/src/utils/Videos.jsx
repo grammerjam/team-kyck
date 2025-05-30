@@ -2,10 +2,18 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './Videos.module.css';
 
 export function Videos({videoId}) {
+  const fs = require('fs');
+
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
   const videoUrl = "/assets/sample-video.mp4";
   const [thumbnailUrl, setThumbnail] = useState(null); 
+
+ // Danmu states
+  const [danmuList, setDanmuList] = useState([]);
+  const [newDanmu, setNewDanmu] = useState('');
+  const [showDanmu, setShowDanmu] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
     fetch(`api/showInfo/id?id=${videoId}`, {
@@ -28,13 +36,58 @@ export function Videos({videoId}) {
       console.error('Error fetching video data:', err);
     });
   }, []);
+
+  useEffect(() => {
+    fetch('assets/danmu.json')
+      .then(response => response.json())
+      .then(data => {
+        setDanmuList(data);
+      })
+      .catch(err => {
+        console.error('Error fetching danmu data:', err);
+      });
+  })
   
   const handleVideoClick = () => {
     setIsPlaying(true);
   };
-  console.log(thumbnailUrl);
 
-  // Add this effect to play the video after it's rendered
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+    }
+  }
+
+  const handleDanmuSubmit = (e) => {
+    e.preventDefault();
+    if (newDanmu.trim() !== '') {
+      const newDanmuItem = {
+        text: newDanmu,
+        time: videoRef.current ? videoRef.current.currentTime : 0,
+        color: '#FFFFFF', // Default color, can be randomized or set based on user preference
+      };
+      setDanmuList([...danmuList, newDanmuItem]);
+      setNewDanmu('');
+    }
+    fs.writeFile('assets/danmu.json', JSON.stringify([...danmuList, newDanmu]), (err) => {
+      if (err) {
+        console.error('Error writing to danmu.json:', err);
+      } else {
+        console.log('Danmu saved successfully!');
+      }
+    }
+  );
+  }
+
+  // Function to get visible danmu based on current time
+  const getVisibleDanmu = () => {
+    const DISPLAY_DURATION = 5; // seconds
+    return danmuList.filter(danmu => 
+      currentTime >= danmu.time && 
+      currentTime <= danmu.time + DISPLAY_DURATION
+    );
+  };
+
   useEffect(() => {
     if (isPlaying && videoRef.current) {
       videoRef.current.play().catch(err => console.error("Autoplay failed:", err));
@@ -62,6 +115,7 @@ export function Videos({videoId}) {
           ref={videoRef}
           src={videoUrl}
           onClick={handleVideoClick}
+          onTimeUpdate={handleTimeUpdate}
           controls
           className={styles.videoElement}
           autoPlay
@@ -72,6 +126,4 @@ export function Videos({videoId}) {
     </div>
   );
 }
-
-
 
