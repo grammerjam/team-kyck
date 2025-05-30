@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Videos.module.css';
 import { Danmu } from './Damu/Danmu';
-import { get } from 'http';
 
 export function Videos({videoId}) {
   const fs = require('fs');
