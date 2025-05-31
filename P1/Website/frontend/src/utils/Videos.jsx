@@ -133,13 +133,13 @@ export function Videos({videoId}) {
           <button type="submit" className={styles.danmuSubmit}>
             send
           </button>
+          <button 
+            onClick={() => setShowDanmu(!showDanmu)}
+            className={`${styles.danmuToggle} ${!showDanmu ? styles.danmuOff : ''}`}
+          >
+            Danmu {showDanmu ? 'ON' : 'OFF'}
+          </button>
         </form>
-        <button 
-          onClick={() => setShowDanmu(!showDanmu)}
-          className={`${styles.danmuToggle} ${!showDanmu ? styles.danmuOff : ''}`}
-        >
-          Danmu {showDanmu ? 'ON' : 'OFF'}
-        </button>
       </div>
     </div>
   );
