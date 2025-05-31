@@ -26,8 +26,10 @@ export function Danmu(DanmuProps: DanmuProps) {
         // Calculate the position based on the elapsed time
         const progress = Math.min(elapsedTime / duration, 1); // Ensure progress does not exceed 1
         const itemWidth = danmuRef.current.offsetWidth; // Get the width of the danmu item
-        const endX = -itemWidth; // End position is off-screen to the left
-        const newX = DanmuProps.containerWidth - (progress * (DanmuProps.containerWidth + itemWidth)); // Calculate new X position
+        let newX = DanmuProps.containerWidth - (progress * (DanmuProps.containerWidth + itemWidth)); // Calculate new X position
+        // Left bound: don't go further left than -itemWidth (completely off screen)
+        // Right bound: don't start beyond container width
+        newX = Math.max(-itemWidth, Math.min(DanmuProps.containerWidth, newX));
         const newY = (DanmuProps.index % 10) * 40 + 20; // 10 tracks, 40px apart
         setPosition({x: newX, y: newY});
     }, [DanmuProps.currentTime, DanmuProps.containerWidth, DanmuProps.index, DanmuProps.danmu.time]);
