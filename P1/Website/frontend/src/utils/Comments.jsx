@@ -78,13 +78,7 @@ export function Comments(){
                         placeholder="Add a comment..." 
                         value={commentText}
                         onChange={handleTextareaChange}
-                        rows={1}
-                        style={{
-                            resize: 'none',
-                            overflow: 'hidden',
-                            minHeight: '40px',
-                            maxHeight: '200px'
-                        }}
+                        rows={2}
                     />
                     <button className={styles.submitButton}>Submit</button>
                 </div>
