@@ -70,7 +70,10 @@
 }
 
 .submitButton {
+  
   position: relative;
+  align-self: center;
+  height: fit-content;
   padding: 8px 16px;
   margin-left: 8px;
   background-color: #3a47d5;
