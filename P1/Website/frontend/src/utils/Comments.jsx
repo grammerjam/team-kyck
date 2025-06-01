@@ -57,7 +57,17 @@ export function Comments(){
     return(
         <>
             <h1 className={styles.commentSectionTitle}>{comments.length} Comments</h1>
-
+            <div className={styles.commentSection}>
+                <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
+                <div className={styles.commentInputContainer}>
+                    <textarea 
+                        className={styles.commentInput} 
+                        placeholder="Add a comment..." 
+                        rows="4"
+                    ></textarea>
+                    <button className={styles.submitButton}>Submit</button>
+                </div>
+            </div>
             <div className={styles.commentsContainer}>
                 {loading ? (
                     <p>Loading comments...</p>
