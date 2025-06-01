@@ -1,10 +1,22 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import styles from './Comments.module.css';
 
 export function Comments(){
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [commentText, setCommentText] = useState('');
+    const textareaRef = useRef(null);
+
+    // Auto-resize textarea function
+    const handleTextareaChange = (e) => {
+        setCommentText(e.target.value);
+        
+        // Reset height to auto to get the correct scrollHeight
+        e.target.style.height = 'auto';
+        // Set height to scrollHeight to fit content
+        e.target.style.height = e.target.scrollHeight + 'px';
+    };
 
     useEffect(() => {
         // Fetch comments from JSON file
@@ -61,10 +73,19 @@ export function Comments(){
                 <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
                 <div className={styles.commentInputContainer}>
                     <textarea 
+                        ref={textareaRef}
                         className={styles.commentInput} 
                         placeholder="Add a comment..." 
-                        rows="4"
-                    ></textarea>
+                        value={commentText}
+                        onChange={handleTextareaChange}
+                        rows={1}
+                        style={{
+                            resize: 'none',
+                            overflow: 'hidden',
+                            minHeight: '40px',
+                            maxHeight: '200px'
+                        }}
+                    />
                     <button className={styles.submitButton}>Submit</button>
                 </div>
             </div>
