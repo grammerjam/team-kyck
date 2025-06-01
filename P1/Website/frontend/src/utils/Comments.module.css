@@ -55,6 +55,16 @@
   gap: 8px;
 }
 
+.commentingUser {
+  margin-bottom: 8px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
 .commentInput {
   width: 100%;
   padding: 8px;
