@@ -63,7 +63,6 @@
     background-color: #161d2f;
     color: white;
     resize: none;
-    overflow: hidden;
     min-height: 40px;
     max-height: 200px;
     transition: height 0.1s ease;
@@ -71,6 +70,7 @@
 }
 
 .submitButton {
+  position: relative;
   padding: 8px 16px;
   margin-left: 8px;
   background-color: #3a47d5;
