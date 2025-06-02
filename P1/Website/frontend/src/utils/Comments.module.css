@@ -49,6 +49,12 @@
   padding: 1rem;
 }
 
+.interactiveStarRating {
+  margin-left: 1vh;
+  top: -10px;
+  position: relative;
+}
+
 .commentInputContainer {
   display: flex;
   margin-top: 1rem;
