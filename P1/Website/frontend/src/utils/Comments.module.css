@@ -56,16 +56,16 @@
   gap: 8px;
 }
 
+.userInfoSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
 .commentingUser {
-  margin-bottom: 8px;
-  transform: translateY(-50%);
-  top: -1.5vh;
-  position: relative;
   font-weight: bold;
   color: #fff;
-  display: inline-flex;
-  align-items: center;
-  margin-left: 10px;
 }
 
 .commentInput {

@@ -71,12 +71,10 @@ export function Comments(){
         <>
             <h1 className={styles.commentSectionTitle}>{comments.length} Comments</h1>
             <div className={styles.commentSection}>
-                <div>
+                <div className={styles.userInfoSection}>
                     <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
                     <span className={styles.commentingUser}>Your Name</span>
-                    <span >
-                        <InteractiveStarRating />
-                    </span>
+                    <InteractiveStarRating />
                 </div>
                 <div className={styles.commentInputContainer}>
                     <textarea 
