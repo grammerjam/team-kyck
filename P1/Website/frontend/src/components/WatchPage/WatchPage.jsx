@@ -3,7 +3,6 @@ import {Videos} from '../../utils/Videos';
 import {Comments} from '../../utils/Comments';
 import styles from './WatchPage.module.css';
 import { useSearchParams } from 'react-router-dom';
-import { Sidebar } from '../../utils/Sidebar';
 import { MainLayout } from '../../layouts/MainLayout';
 
 export default function WatchPage() {

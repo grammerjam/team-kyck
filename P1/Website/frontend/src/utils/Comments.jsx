@@ -1,10 +1,23 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import styles from './Comments.module.css';
+import { InteractiveStarRating } from './InteractiveStarRating/InteractiveStarRating';
 
 export function Comments(){
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [commentText, setCommentText] = useState('');
+    const textareaRef = useRef(null);
+
+    // Auto-resize textarea function
+    const handleTextareaChange = (e) => {
+        setCommentText(e.target.value);
+        
+        // Reset height to auto to get the correct scrollHeight
+        e.target.style.height = 'auto';
+        // Set height to scrollHeight to fit content
+        e.target.style.height = e.target.scrollHeight + 'px';
+    };
 
     useEffect(() => {
         // Fetch comments from JSON file
@@ -57,7 +70,26 @@ export function Comments(){
     return(
         <>
             <h1 className={styles.commentSectionTitle}>{comments.length} Comments</h1>
-
+            <div className={styles.commentSection}>
+                <div className={styles.userInfoSection}>
+                    <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
+                    <span className={styles.commentingUser}>Your Name</span>
+                    <div className={styles.interactiveStarRating}>
+                        <InteractiveStarRating />
+                    </div>
+                </div>
+                <div className={styles.commentInputContainer}>
+                    <textarea 
+                        ref={textareaRef}
+                        className={styles.commentInput} 
+                        placeholder="Add a comment..." 
+                        value={commentText}
+                        onChange={handleTextareaChange}
+                        rows={2}
+                    />
+                    <button className={styles.submitButton}>Submit</button>
+                </div>
+            </div>
             <div className={styles.commentsContainer}>
                 {loading ? (
                     <p>Loading comments...</p>

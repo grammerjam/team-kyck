@@ -1,0 +1,22 @@
+.interactiveStarContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.interactiveStar {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.interactiveStar.starFilled {
+  color: #ffb400;
+}
+
+.interactiveStar.starEmpty {
+  color: #777;
+}
