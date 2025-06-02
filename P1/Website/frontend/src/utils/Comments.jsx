@@ -74,8 +74,8 @@ export function Comments(){
                 <div>
                     <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
                     <span className={styles.commentingUser}>Your Name</span>
-                    <InteractiveStarRating />
                 </div>
+                <InteractiveStarRating className={styles.interactiveStar}/>
                 <div className={styles.commentInputContainer}>
                     <textarea 
                         ref={textareaRef}

@@ -134,6 +134,10 @@
     margin-left: 10px;
 }
 
+.interactiveStar{
+  display: inline-block;
+}
+
 .starRating {
   display: inline-block;
   line-height: 1;
