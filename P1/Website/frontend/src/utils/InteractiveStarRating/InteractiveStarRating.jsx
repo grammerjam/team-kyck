@@ -22,8 +22,6 @@ export function InteractiveStarRating() {
         );
     }
     return(
-            <div className={styles.interactiveStarContainer}>
-                <div className={styles.starRating}>{stars}</div>
-            </div>
+                <div className={styles.interactiveStarContainer}>{stars}</div>
         );
 }
