@@ -27,9 +27,6 @@
   }
 
   .isActive {
-    color: #5A698F;
-    transition: all 0.2s ease;
-    position: relative;
     filter: brightness(0) saturate(100%) invert(100%);
   }
   
@@ -56,9 +53,6 @@
     filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(325deg) brightness(101%) contrast(96%);
   }
 
-  .isActive:hover {
-    filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(325deg) brightness(101%) contrast(96%);
-  }
   
   .profileLink:hover {
     transform: scale(1.1);
