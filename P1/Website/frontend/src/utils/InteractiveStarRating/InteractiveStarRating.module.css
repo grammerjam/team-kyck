@@ -1,0 +1,37 @@
+.interactiveStarContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.ratingLabel {
+  color: white;
+  font-size: 14px;
+}
+
+.interactiveStar {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.interactiveStar:hover {
+  transform: scale(1.1);
+}
+
+.interactiveStar.starFilled {
+  color: #ffb400;
+}
+
+.interactiveStar.starEmpty {
+  color: #777;
+}
+
+.selectedRating {
+  color: #ccc;
+  font-size: 12px;
+  margin-left: 4px;
+}

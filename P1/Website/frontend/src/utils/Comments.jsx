@@ -1,5 +1,6 @@
 import {useEffect, useState, useRef} from 'react';
 import styles from './Comments.module.css';
+import { InteractiveStarRating } from './InteractiveStarRating/InteractiveStarRating';
 
 export function Comments(){
     const [comments, setComments] = useState([]);
@@ -73,6 +74,7 @@ export function Comments(){
                 <div>
                     <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
                     <span className={styles.commentingUser}>Your Name</span>
+                    <InteractiveStarRating />
                 </div>
                 <div className={styles.commentInputContainer}>
                     <textarea 

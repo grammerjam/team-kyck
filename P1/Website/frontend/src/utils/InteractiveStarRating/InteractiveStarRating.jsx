@@ -8,25 +8,26 @@ export function InteractiveStarRating() {
     const maxRating = 5;
 
     for (let i = 1; i <= maxRating; i++) {
-        const isActive = i <= (hoveredRating || userRating);
+        const isActive = i <= (hoveredRating || rating);
         stars.push(
             <span
                 key={i}
                 className={`${styles.interactiveStar} ${isActive ? styles.starFilled : styles.starEmpty}`}
                 onMouseEnter={() => setHoveredRating(i)}
                 onMouseLeave={() => setHoveredRating(0)}
-                onClick={() => setUserRating(i)}
+                onClick={() => setRating(i)}
             >
                 {isActive ? '★' : '☆'}
             </span>
         );
     }
-    return (
-        <div className={styles.ratingContainer}>
-            {stars}
-            <p className={styles.ratingText}>
-                {rating > 0 ? `You rated this ${rating} star${rating > 1 ? 's' : ''}` : 'Rate this item'}
-            </p>
-        </div>
-    );
+    return(
+            <div className={styles.interactiveStarContainer}>
+                <span className={styles.ratingLabel}>Rate: </span>
+                <div className={styles.starRating}>{stars}</div>
+                {rating > 0 && (
+                    <span className={styles.selectedRating}>({rating} star{rating !== 1 ? 's' : ''})</span>
+                )}
+            </div>
+        );
 }
