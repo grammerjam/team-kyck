@@ -46,6 +46,7 @@
   align-self: center;
   margin-left: 25vh; /* Added to avoid sidebar overlap */
   max-width: calc(100% - 30vh); /* Prevent content from stretching too wide */
+  padding: 1rem;
 }
 
 .commentInputContainer {
