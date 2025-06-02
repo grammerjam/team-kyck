@@ -24,9 +24,6 @@ export function InteractiveStarRating() {
     return(
             <div className={styles.interactiveStarContainer}>
                 <div className={styles.starRating}>{stars}</div>
-                {rating > 0 && (
-                    <span className={styles.selectedRating}>({rating} star{rating !== 1 ? 's' : ''})</span>
-                )}
             </div>
         );
 }
