@@ -50,9 +50,9 @@
 }
 
 .interactiveStarRating {
-  margin-left: 1vh;
-  top: -10px;
   position: relative;
+  margin-left: 1vh;
+  top: -2px;
 }
 
 .commentInputContainer {
