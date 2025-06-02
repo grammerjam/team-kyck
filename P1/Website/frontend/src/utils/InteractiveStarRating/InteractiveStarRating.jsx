@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import styles from './InteractiveStarRating.module.css';
-import {StarIcon} from '@heroicons/react/24/solid';
 
 export function InteractiveStarRating() {
     const [rating, setRating] = useState(0);
@@ -9,14 +8,25 @@ export function InteractiveStarRating() {
     const maxRating = 5;
 
     for (let i = 1; i <= maxRating; i++) {
+        const isActive = i <= (hoveredRating || userRating);
         stars.push(
-            <StarIcon
+            <span
                 key={i}
-                className={`${styles.star} ${i <= (hoveredRating || rating) ? styles.filled : ''}`}
+                className={`${styles.interactiveStar} ${isActive ? styles.starFilled : styles.starEmpty}`}
                 onMouseEnter={() => setHoveredRating(i)}
                 onMouseLeave={() => setHoveredRating(0)}
-                onClick={() => setRating(i)}
-            />
+                onClick={() => setUserRating(i)}
+            >
+                {isActive ? '★' : '☆'}
+            </span>
         );
     }
+    return (
+        <div className={styles.ratingContainer}>
+            {stars}
+            <p className={styles.ratingText}>
+                {rating > 0 ? `You rated this ${rating} star${rating > 1 ? 's' : ''}` : 'Rate this item'}
+            </p>
+        </div>
+    );
 }
