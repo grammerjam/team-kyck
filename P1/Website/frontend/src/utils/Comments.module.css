@@ -58,6 +58,8 @@
 .commentingUser {
   margin-bottom: 8px;
   transform: translateY(-50%);
+  top: -1.5vh;
+  position: relative;
   font-weight: bold;
   color: #fff;
   display: inline-flex;
