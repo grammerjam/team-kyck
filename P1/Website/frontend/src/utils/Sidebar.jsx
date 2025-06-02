@@ -1,7 +1,9 @@
 // import * as React from 'react';
+import { useUser } from '../context/user';
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {
+    const { logout } = useUser()
     return (
         <div className={styles.sidebar}>
             {/* Logo */}
@@ -33,10 +35,14 @@ export function Sidebar() {
                 </a>
             </div>
             {/* Profile Icon */}
-            <a href="/profile" className={styles.profileLink}>
+            <a href="/" onClick={()=>logout()}  className={styles.profileLink}>
                 <img src="assets/image-avatar.png" 
                 alt="Home" />
             </a>
+            {/* <a href="/profile" className={styles.profileLink}>
+                <img src="assets/image-avatar.png" 
+                alt="Home" />
+            </a> */}
         </div>
     );
 }
