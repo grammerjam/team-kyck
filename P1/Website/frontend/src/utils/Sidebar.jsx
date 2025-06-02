@@ -1,8 +1,10 @@
 // import * as React from 'react';
+import { useUser } from '../context/user';
 import styles from './Sidebar.module.css';
 import { useState, useEffect } from 'react';
 
 export function Sidebar() {
+    const { logout } = useUser()
     const [currentPath, setCurrentPath] = useState('');
 
     useEffect(() => {
@@ -42,10 +44,14 @@ export function Sidebar() {
                 </a>
             </div>
             {/* Profile Icon */}
-            <a href="/profile" className={styles.profileLink}>
+            <a href="/" onClick={()=>logout()}  className={styles.profileLink}>
                 <img src="assets/image-avatar.png" 
                 alt="Home" />
             </a>
+            {/* <a href="/profile" className={styles.profileLink}>
+                <img src="assets/image-avatar.png" 
+                alt="Home" />
+            </a> */}
         </div>
     );
 }
