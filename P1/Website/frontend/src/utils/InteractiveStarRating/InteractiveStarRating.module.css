@@ -20,9 +20,3 @@
 .interactiveStar.starEmpty {
   color: #777;
 }
-
-.selectedRating {
-  color: #ccc;
-  font-size: 12px;
-  margin-left: 4px;
-}
