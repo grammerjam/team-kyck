@@ -4,12 +4,21 @@ import LoginPage from './components/LoginPage/LoginPage';
 import LandingPage from './components/LandingPage/LandingPage';
 import SignPage from './components/SignupPage/SignupPage';
 import WatchPage from './components/WatchPage/WatchPage';
+import { UserProvider, useUser } from './context/user';
+import { useEffect, useState } from 'react';
 
 function Layout() {
 
+  const { restoreUser } = useUser();
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    restoreUser(setIsLoaded);
+  }, [restoreUser]);
+    
   return (
     <>
-      <Outlet />
+      {isLoaded && <Outlet />}
     </>
   );
 }
@@ -48,7 +57,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
+  );
 }
 
 export default App;

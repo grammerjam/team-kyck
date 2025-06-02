@@ -2,10 +2,14 @@
 import {useState} from 'react'
 // import Image from "next/image";
 import styles from "./Login.module.css"
+import { useUser } from '../../context/user';
+import { useNavigate } from 'react-router-dom';
 // import Link from 'next/link'
 // import { relative } from 'path';
 
 export default function LoginPage() {
+    const { setUser } = useUser()
+    const nav = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [eMessage, setEMessage] = useState("");
@@ -16,6 +20,23 @@ export default function LoginPage() {
   const validate=()=>{
     emailValidation()
     passwordValidation()
+    fetch('api/session', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email, 
+            password
+    })})
+    .then(res => res.json())
+    .then(data => {
+        if (data) {
+            setUser(data.user);
+            nav('/');
+        }
+    })
+    .catch(err => {
+        console.error('Error fetching shows:', err);
+    });
   }
 
   const emailValidation=()=>{
