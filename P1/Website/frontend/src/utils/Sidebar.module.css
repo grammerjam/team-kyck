@@ -25,6 +25,10 @@
     gap: 40px;
     flex: 1;
   }
+
+  .isActive {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
   
   .profileLink {
     display: flex;
@@ -48,6 +52,7 @@
   .iconLink:hover img:not([src*="image-avatar"]) {
     filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(325deg) brightness(101%) contrast(96%);
   }
+
   
   .profileLink:hover {
     transform: scale(1.1);
