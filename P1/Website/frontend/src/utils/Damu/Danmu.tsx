@@ -11,7 +11,7 @@ interface DanmuProps {
     currentTime: number; // The current time in seconds
     containerWidth: number; // The width of the container in pixels
     index: number; // The index of the danmu in the list
-};
+}
 
 export function Danmu(DanmuProps: DanmuProps) {
     const danmuRef = useRef<HTMLDivElement>(null);
