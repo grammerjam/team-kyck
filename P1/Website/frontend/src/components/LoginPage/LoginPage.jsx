@@ -2,7 +2,7 @@
 import {useState} from 'react'
 // import Image from "next/image";
 import styles from "./Login.module.css"
-import { useUser } from '../../context/user';
+import { useUser } from '../../context/User';
 import { useNavigate } from 'react-router-dom';
 // import Link from 'next/link'
 // import { relative } from 'path';

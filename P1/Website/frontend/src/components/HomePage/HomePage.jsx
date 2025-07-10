@@ -4,7 +4,7 @@ import {Searchbar} from '../../utils/SearchBar';
 import {Trending} from '../../utils/Trending';
 import {RecommendedForYou} from '../../utils/RecommendedForYou';
 import { MainLayout } from '../../layouts/MainLayout';
-import { useUser } from '../../context/user';
+import { useUser } from '../../context/User';
 import LandingPage from '../LandingPage/LandingPage';
 
 export default function Home() {

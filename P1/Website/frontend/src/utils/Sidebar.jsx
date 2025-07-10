@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import { useUser } from '../context/user';
+import { useUser } from '../context/User';
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {

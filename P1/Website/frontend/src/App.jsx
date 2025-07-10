@@ -4,7 +4,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import LandingPage from './components/LandingPage/LandingPage';
 import SignPage from './components/SignupPage/SignupPage';
 import WatchPage from './components/WatchPage/WatchPage';
-import { UserProvider, useUser } from './context/user';
+import { UserProvider, useUser } from './context/User';
 import { useEffect, useState } from 'react';
 
 function Layout() {
