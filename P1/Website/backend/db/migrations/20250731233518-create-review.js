@@ -33,7 +33,12 @@ module.exports = {
         onDelete: 'cascade'
       },
       review: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+          min: 1,
+          max: 5
+        }
       },
       createdAt: {
         allowNull: false,

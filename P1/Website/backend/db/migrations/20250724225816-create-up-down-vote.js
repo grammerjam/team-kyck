@@ -8,14 +8,9 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('UpDownVotes', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
       userId: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
         allowNull: false,
         references: {
           model: 'Users',
@@ -25,6 +20,7 @@ module.exports = {
       },
       commentId: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
         allowNull: false,
         references: {
           model: 'Comments',

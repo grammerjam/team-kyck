@@ -5,13 +5,21 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
     static associate(models) {
-      // define association here
+      Review.belongsTo(models.User, { foreignKey: 'userId'});
+      Review.belongsTo(models.Video, { foreignKey: 'videoId'});
     }
   }
   Review.init({
     userId: DataTypes.INTEGER,
     videoId: DataTypes.INTEGER,
-    review: DataTypes.INTEGER
+    review: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 5
+      }
+    }
   }, {
     sequelize,
     modelName: 'Review',
