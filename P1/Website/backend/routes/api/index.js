@@ -5,6 +5,7 @@ const trendingRouter = require('./trending.js');
 const recommendationsRouter = require('./recommendedForYou.js');
 const typesRouter = require('./types.js');
 const showInfoRouter = require('./showInfo.js');
+const commentsRouter = require('./comments.js');
 
 const { restoreUserSimple } = require("../../utils/auth.js");
 
@@ -20,5 +21,6 @@ router.use('/trending', trendingRouter);
 router.use('/recommendedForYou', recommendationsRouter);
 router.use('/types', typesRouter);
 router.use('/showInfo', showInfoRouter);
+router.use('/comments', commentsRouter);
 
 module.exports = router;
