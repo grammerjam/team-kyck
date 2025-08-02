@@ -3,10 +3,10 @@ const { Comment } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 
-// Sign up
+
 router.get('/:videoId', async (req, res) => {
         const { videoId } = req.params;
-        console.log(videoId);
+
         const comments = await Comment.findAll({
             where: {videoId: videoId}
         });

@@ -6,6 +6,7 @@ const recommendationsRouter = require('./recommendedForYou.js');
 const typesRouter = require('./types.js');
 const showInfoRouter = require('./showInfo.js');
 const commentsRouter = require('./comments.js');
+const updownvotesRouter = require('./updownvotes.js');
 
 const { restoreUserSimple } = require("../../utils/auth.js");
 
@@ -22,5 +23,6 @@ router.use('/recommendedForYou', recommendationsRouter);
 router.use('/types', typesRouter);
 router.use('/showInfo', showInfoRouter);
 router.use('/comments', commentsRouter);
+router.use('/updownvotes', updownvotesRouter);
 
 module.exports = router;
