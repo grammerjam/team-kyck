@@ -1,8 +1,10 @@
 'use client'
 import {useState} from 'react'
 import styles from "./Login.module.css"
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
@@ -24,13 +26,37 @@ export default function Home() {
   const [isLastNameError, setIsLastNameError] = useState(false)
   const [isUsernameError, setIsUsernameError] = useState(false)
 
+  const handleSignUp = async () => {
+    // if (!validate()) {
+    //   console.log('SignUp Error');
+    //   return;
+    // }
+    const res = await fetch('/api/users', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+      })
+    })
+    
+    if (res.ok) {
+      nav('/');
+    } else {
+      console.log('SignUp Error');
+    }
+  }
+
   const validate=()=>{
-    emailValidation()
-    passwordValidation()
-    passwordCheckValidation()
-    cantBeEmptyValidation(firstName, setFNMessage, setIsFirstNameError)
-    cantBeEmptyValidation(lastName, setLNMessage, setIsLastNameError)
-    cantBeEmptyValidation(username, setUNMessage, setIsUsernameError)
+    return emailValidation() &&
+      passwordValidation() &&
+      passwordCheckValidation() &&
+      cantBeEmptyValidation(firstName, setFNMessage, setIsFirstNameError) &&
+      cantBeEmptyValidation(lastName, setLNMessage, setIsLastNameError) &&
+      cantBeEmptyValidation(username, setUNMessage, setIsUsernameError)
   }
 
   const cantBeEmptyValidation=(strVal, messageSetter, errorCallback)=>{
@@ -38,10 +64,12 @@ export default function Home() {
     if(strVal.length > 0){
       messageSetter("");
       errorCallback(false)
+      return true;
     }
     else {
       messageSetter("Can't be empty");
       errorCallback(true)
+      return false
     }
   }
 
@@ -51,14 +79,17 @@ export default function Home() {
     if(regEx.test(email)){
       setEMessage("");
       setIsEmailError(false)
+      return true
     }
     else if (!regEx.test(email) && email != ""){
       setEMessage("Can't be invalid");
       setIsEmailError(true)
+      return false
     }
     else {
       setEMessage("Can't be empty");
       setIsEmailError(true)
+      return false
     }
   };
 
@@ -66,10 +97,12 @@ export default function Home() {
     if(password.length > 0){
       setPMessage("");
       setIsPasswordError(false)
+      return false
     }
     else {
       setPMessage("Can't be empty");
       setIsPasswordError(true)
+      return true
     }
   };
   
@@ -77,10 +110,12 @@ export default function Home() {
     if(password == passwordCheck && password != ""){
       setPCMessage("");
       setIsPasswordCheckError(false)
+      return false
     }
     else {
       setPCMessage("Passwords must match");
       setIsPasswordCheckError(true)
+      return true
     }
   };
 
@@ -178,10 +213,10 @@ export default function Home() {
             <input className={styles.loginInput} type="password" placeholder="Repeat password" aria-required="true" onChange={handleOnPasswordCheckChange} value={passwordCheck} required/>
             </div>
             <br/>
-            <button onClick={validate} className={styles.loginButtonSubmit}>Login to your account</button>
+            <button onClick={handleSignUp} className={styles.loginButtonSubmit}>Sign Up</button>
             <br/>
             <p className={styles.loginSignUpCon}>
-                {`Don't have an account? `}
+                {`Already have an account? `}
               <a href="/login" className={styles.loginSignUpLink}> Login
               </a>
               <br/>
