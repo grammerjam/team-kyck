@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Sign up
 router.post('/', async (req, res) => {
-        const { firstName, lastName, email, password, username } = req.body;
+        const { firstName, lastName, email, password, username, test } = req.body;
         const user = await User.create({ firstName, lastName, email, username, password });
         const safeUser = {
             id: user.id,
@@ -20,6 +20,14 @@ router.post('/', async (req, res) => {
 
         res.status(201);
         return res.json(safeUser);
+        // console.log('First Name', firstName);
+        // console.log('Test', test)
+        // if (!firstName) {
+        //   res.status(400);
+        //   return res.json({ message: "No First Name" });
+        // }
+        // res.status(201);
+        // return res.json({ firstName, lastName, email, password, username });
     }
   );
 
