@@ -27,10 +27,11 @@ export default function Home() {
   const [isUsernameError, setIsUsernameError] = useState(false)
 
   const handleSignUp = async () => {
-    // if (!validate()) {
-    //   console.log('SignUp Error');
-    //   return;
-    // }
+    if (!validate()) {
+      console.log('SignUp Error');
+      return;
+    }
+
     const res = await fetch('/api/users', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
@@ -51,12 +52,15 @@ export default function Home() {
   }
 
   const validate=()=>{
-    return emailValidation() &&
-      passwordValidation() &&
-      passwordCheckValidation() &&
-      cantBeEmptyValidation(firstName, setFNMessage, setIsFirstNameError) &&
-      cantBeEmptyValidation(lastName, setLNMessage, setIsLastNameError) &&
+    const validationArr = [emailValidation(),
+      passwordValidation(),
+      passwordCheckValidation(),
+      cantBeEmptyValidation(firstName, setFNMessage, setIsFirstNameError),
+      cantBeEmptyValidation(lastName, setLNMessage, setIsLastNameError),
       cantBeEmptyValidation(username, setUNMessage, setIsUsernameError)
+    ]
+
+    return validationArr.every((val)=>val);
   }
 
   const cantBeEmptyValidation=(strVal, messageSetter, errorCallback)=>{
@@ -75,7 +79,8 @@ export default function Home() {
 
   const emailValidation=()=>{
     //This regex is from stack overflow somewhere
-    const regEx = /^\w*@([\w-]+\.)+[\w-]{2,4}$/;
+    // const regEx = /^\w*@([\w-]+\.)+[\w-]{2,4}$/;
+    const regEx = /^[\w\W]+@[a-z]+\.[a-z]+$/;
     if(regEx.test(email)){
       setEMessage("");
       setIsEmailError(false)
@@ -97,12 +102,12 @@ export default function Home() {
     if(password.length > 0){
       setPMessage("");
       setIsPasswordError(false)
-      return false
+      return true
     }
     else {
       setPMessage("Can't be empty");
       setIsPasswordError(true)
-      return true
+      return false
     }
   };
   
@@ -110,12 +115,12 @@ export default function Home() {
     if(password == passwordCheck && password != ""){
       setPCMessage("");
       setIsPasswordCheckError(false)
-      return false
+      return true
     }
     else {
       setPCMessage("Passwords must match");
       setIsPasswordCheckError(true)
-      return true
+      return false
     }
   };
 
