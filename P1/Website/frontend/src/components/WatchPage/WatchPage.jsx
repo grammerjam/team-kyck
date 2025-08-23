@@ -64,7 +64,7 @@ export default function WatchPage() {
                 </div>
             </div>
             <Videos videoId={id}/>
-            <Comments />
+            <Comments videoId={id}/>
             </MainLayout>
         </>
     );

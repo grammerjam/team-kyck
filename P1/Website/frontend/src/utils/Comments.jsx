@@ -2,8 +2,9 @@ import {useEffect, useState, useRef} from 'react';
 import styles from './Comments.module.css';
 import { InteractiveStarRating } from './InteractiveStarRating/InteractiveStarRating';
 
-export function Comments(){
+export function Comments({videoId}){
     const [comments, setComments] = useState([]);
+    const [rating, setRating] = useState(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [commentText, setCommentText] = useState('');
@@ -21,7 +22,7 @@ export function Comments(){
 
     useEffect(() => {
         // Fetch comments from JSON file
-        fetch('/assets/comments.json')
+        fetch(`/api/comments/${videoId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch comments');
@@ -37,7 +38,7 @@ export function Comments(){
                 setError(err.message);
                 setLoading(false);
             });
-    }, []);
+    }, [videoId]);
 
     // Format timestamp to a readable date
     const formatDate = (timestamp) => {
@@ -67,6 +68,32 @@ export function Comments(){
         return <div className={styles.starRating}>{stars}</div>;
     };
 
+    const handleNewComment = async () => {
+        fetch(`/api/comments/${videoId}`,{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                comment: commentText,
+                rating
+            })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed add comment');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setComments(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error('Error adding comment:', err);
+                setError(err.message);
+                setLoading(false);
+            });
+    }
+
     return(
         <>
             <h1 className={styles.commentSectionTitle}>{comments.length} Comments</h1>
@@ -75,7 +102,7 @@ export function Comments(){
                     <img src="assets/image-avatar.png" alt="Avatar" className={styles.avatar} />
                     <span className={styles.commentingUser}>Your Name</span>
                     <div className={styles.interactiveStarRating}>
-                        <InteractiveStarRating />
+                        <InteractiveStarRating rating={rating} setRating={setRating}/>
                     </div>
                 </div>
                 <div className={styles.commentInputContainer}>
@@ -87,7 +114,10 @@ export function Comments(){
                         onChange={handleTextareaChange}
                         rows={2}
                     />
-                    <button className={styles.submitButton}>Submit</button>
+                    <button 
+                        className={styles.submitButton}
+                        onClick={handleNewComment}
+                    >Submit</button>
                 </div>
             </div>
             <div className={styles.commentsContainer}>
@@ -107,7 +137,7 @@ export function Comments(){
                                 </a>
                                 <span className={styles.username}>{comment.user}</span>
                                 <div className={styles.rating}>{comment.rating && renderStars(comment.rating)}</div>
-                                <span className={styles.timestamp}>{formatDate(comment.timestamp)}</span>
+                                <span className={styles.timestamp}>{formatDate(comment.createdAt)}</span>
                             </div>
                             {/* Display star rating */}
                             <p className={styles.commentText}>{comment.comment}</p>

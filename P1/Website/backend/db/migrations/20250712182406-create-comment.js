@@ -32,6 +32,14 @@ module.exports = {
         },
         onDelete: 'cascade'
       },
+      rating: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+          min: 1,
+          max: 5
+        }
+      },
       comment: {
         type: Sequelize.TEXT,
         allowNull: false,
