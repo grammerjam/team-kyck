@@ -1,8 +1,7 @@
 import {useState} from 'react';
 import styles from './InteractiveStarRating.module.css';
 
-export function InteractiveStarRating() {
-    const [rating, setRating] = useState(0);
+export function InteractiveStarRating({rating, setRating}) {
     const [hoveredRating, setHoveredRating] = useState(0);
     const stars = []; // Array to hold star elements
     const maxRating = 5;

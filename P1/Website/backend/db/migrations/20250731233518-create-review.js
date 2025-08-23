@@ -7,51 +7,51 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Reviews', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Users',
-          key: 'id',
-        },
-        onDelete: 'cascade'
-      },
-      videoId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Videos',
-          key: 'id',
-        },
-        onDelete: 'cascade'
-      },
-      review: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-          min: 1,
-          max: 5
-        }
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    }, options);
+    // await queryInterface.createTable('Reviews', {
+    //   id: {
+    //     allowNull: false,
+    //     autoIncrement: true,
+    //     primaryKey: true,
+    //     type: Sequelize.INTEGER
+    //   },
+    //   userId: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //       model: 'Users',
+    //       key: 'id',
+    //     },
+    //     onDelete: 'cascade'
+    //   },
+    //   videoId: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //       model: 'Videos',
+    //       key: 'id',
+    //     },
+    //     onDelete: 'cascade'
+    //   },
+    //   review: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     validate: {
+    //       min: 1,
+    //       max: 5
+    //     }
+    //   },
+    //   createdAt: {
+    //     allowNull: false,
+    //     type: Sequelize.DATE
+    //   },
+    //   updatedAt: {
+    //     allowNull: false,
+    //     type: Sequelize.DATE
+    //   }
+    // }, options);
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = "Reviews";
-    return queryInterface.dropTable(options);
+    // options.tableName = "Reviews";
+    // return queryInterface.dropTable(options);
   }
 };

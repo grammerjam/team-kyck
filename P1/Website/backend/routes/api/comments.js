@@ -15,7 +15,9 @@ router.get('/:videoId', async (req, res) => {
             id: comment.id,
             userId: comment.userId,
             videoId: comment.videoId,
-            comment: comment.comment
+            comment: comment.comment,
+            rating: comment.rating,
+            createdAt: comment.createdAt
         }));    
 
         res.status(201)
@@ -25,20 +27,34 @@ router.get('/:videoId', async (req, res) => {
 
 router.post('/:videoId', requireAuth, async (req, res) => {
     const { videoId } = req.params;
-    const { comment } = req.body;
-    const newComment = await Comment.create({
+    const { comment, rating } = req.body;
+    await Comment.create({
         userId: req.user.id,    
         videoId: videoId,
-        comment: comment
+        comment: comment,
+        rating: rating
     });
 
-    res.status(201);
-    return res.json(newComment);
+    const comments = await Comment.findAll({
+        where: {videoId: videoId}
+    });
+
+    const formattedComments = comments.map(comment => ({
+        id: comment.id,
+        userId: comment.userId,
+        videoId: comment.videoId,
+        comment: comment.comment,
+        rating: comment.rating,
+        createdAt: comment.createdAt
+    }));    
+
+    res.status(201)
+    return res.json(formattedComments);
 });
 
 router.put('/:commentId', requireAuth, async (req, res) => {
     const { commentId } = req.params;
-    const { comment } = req.body;
+    const { comment, rating } = req.body;
 
     const updatedComment = await Comment.findByPk(commentId);
 
@@ -52,7 +68,7 @@ router.put('/:commentId', requireAuth, async (req, res) => {
         return res.json({ message: "Forbidden" });
     }
 
-    updatedComment.set({comment});
+    updatedComment.set({comment, rating});
     await updatedComment.save();
 
     res.status(200);

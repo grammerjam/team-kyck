@@ -38,22 +38,76 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Pool of sample comments
+// const sampleComments = [
+//   "Amazing! I loved every minute.",
+//   "This was so informative.",
+//   "Great visuals and storytelling.",
+//   "I learned something new today.",
+//   "Not my favorite, but still good.",
+//   "Can someone explain the ending?",
+//   "The soundtrack was awesome!",
+//   "I would recommend this to friends.",
+//   "Looking forward to more like this.",
+//   "The acting was top notch.",
+//   "A bit slow in the middle, but worth it.",
+//   "I didn't expect that twist!",
+//   "The cinematography is beautiful.",
+//   "I want a sequel!",
+//   "This is a masterpiece."
+// ];
 const sampleComments = [
-  "Amazing! I loved every minute.",
-  "This was so informative.",
-  "Great visuals and storytelling.",
-  "I learned something new today.",
-  "Not my favorite, but still good.",
-  "Can someone explain the ending?",
-  "The soundtrack was awesome!",
-  "I would recommend this to friends.",
-  "Looking forward to more like this.",
-  "The acting was top notch.",
-  "A bit slow in the middle, but worth it.",
-  "I didn't expect that twist!",
-  "The cinematography is beautiful.",
-  "I want a sequel!",
-  "This is a masterpiece."
+  {
+    comment: "Amazing! I loved every minute.",
+    rating: 5
+  },
+  {
+    comment: "This was so informative.",
+    rating: 4
+  },
+  {
+    comment: "Great visuals and storytelling.",
+    rating: 4
+  },
+  {
+    comment: "Not my favorite, but still good.",
+    rating: 3
+  },
+  {
+    comment: "Can someone explain the ending?",
+    rating: 3
+  },
+  {
+    comment: "The soundtrack was awesome!",
+    rating: 4
+  },
+  {
+    comment: "I would recommend this to friends.",
+    rating: 5
+  },
+  {
+    comment: "Looking forward to more like this.",
+    rating: 5
+  },
+  {
+    comment: "The acting was top notch.",
+    rating: 4
+  },
+  {
+    comment: "A bit slow in the middle, but worth it.",
+    rating: 3
+  },
+  {
+    comment: "I didn't expect that twist!",
+    rating: 4
+  },
+  {
+    comment: "The cinematography is beautiful.",
+    rating: 4
+  },
+  {
+    comment: "This is a masterpiece.",
+    rating: 5
+  }
 ];
 
 function getRandomComments(n) {
@@ -97,7 +151,8 @@ module.exports = {
         commentsToCreate.push({
           userId: shuffledUsers[i % users.length].id,
           videoId: video.id,
-          comment: comments[i]
+          comment: comments[i].comment,
+          rating: comments[i].rating,
         });
       }
     }
